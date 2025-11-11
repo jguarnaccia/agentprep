@@ -1,0 +1,388 @@
+{
+  "batch": 5,
+  "article": "Article VIII - Rookie Scale Contracts",
+  "description": "Questions covering first-round draft pick contracts, team options, salary amounts, and rookie contract extensions",
+  "question_count": 25,
+  "difficulty_distribution": {
+    "easy": 10,
+    "medium": 10,
+    "hard": 5
+  },
+  "questions": [
+    {
+      "id": 151,
+      "question": "What is the standard length of a Rookie Scale Contract for a first-round draft pick?",
+      "options": [
+        "2 years with 2 team options",
+        "3 years with 1 team option",
+        "4 years total",
+        "2 years guaranteed plus 2 team options"
+      ],
+      "correct": 0,
+      "explanation": "Rookie Scale Contracts are 2 years guaranteed with 2 additional years as team options (3rd and 4th year options). This gives teams up to 4 years of team-controlled salary.",
+      "category": "rookie-scale",
+      "difficulty": "easy",
+      "source": "Article VIII, Section 1(a)"
+    },
+    {
+      "id": 152,
+      "question": "By when must a team exercise the third-year option on a Rookie Scale Contract?",
+      "options": [
+        "Before October 31 of the second year",
+        "Before the last day of the second year",
+        "By the trade deadline of the second year",
+        "Before October 31 of the first year"
+      ],
+      "correct": 0,
+      "explanation": "Teams must exercise the third-year option by October 31 of the second year of the contract. This gives teams two full seasons to evaluate the player before deciding.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 2(a)"
+    },
+    {
+      "id": 153,
+      "question": "What percentage range of the Rookie Scale amount can a first-round pick's salary be?",
+      "options": [
+        "80% to 120%",
+        "100% only (no variation)",
+        "90% to 110%",
+        "80% to 100%"
+      ],
+      "correct": 0,
+      "explanation": "First-round picks can sign for 80% to 120% of the applicable Rookie Scale amount. This gives some flexibility in negotiations while staying within defined parameters.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 1(c)"
+    },
+    {
+      "id": 154,
+      "question": "If a team declines the fourth-year option on a Rookie Scale Contract, when does the player become a free agent?",
+      "options": [
+        "Immediately upon declining",
+        "At the end of the third season",
+        "At the end of the fourth season",
+        "After the All-Star break of the third year"
+      ],
+      "correct": 1,
+      "explanation": "If the fourth-year option is declined, the player completes the third year and becomes a free agent at the end of that season. The team must decide on the fourth-year option by October 31 of the third year.",
+      "category": "rookie-scale",
+      "difficulty": "easy",
+      "source": "Article VIII, Section 2(b)"
+    },
+    {
+      "id": 155,
+      "question": "Can a player on a Rookie Scale Contract be extended before completing their third season?",
+      "options": [
+        "Yes, after the second season",
+        "Yes, after the first season",
+        "No, must complete the third season first",
+        "Yes, but only if they made an All-Star team"
+      ],
+      "correct": 2,
+      "explanation": "A Rookie Scale player cannot sign an extension until after they complete their third season (if the team exercised the third-year option) or after the second season (if the third-year option was declined).",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 3(a)"
+    },
+    {
+      "id": 156,
+      "question": "What is the maximum percentage annual raise allowed in a Rookie Scale extension?",
+      "options": [
+        "5%",
+        "8%",
+        "10%",
+        "Varies based on team's cap situation"
+      ],
+      "correct": 1,
+      "explanation": "Rookie Scale extensions are limited to 8% annual raises, regardless of whether the team has Bird rights. This is lower than the 10% raise available for non-rookie extensions with Bird rights.",
+      "category": "rookie-scale",
+      "difficulty": "hard",
+      "source": "Article VIII, Section 3(c)"
+    },
+    {
+      "id": 157,
+      "question": "How is the salary for the #1 overall pick in the draft determined?",
+      "options": [
+        "Negotiated freely within a range",
+        "Fixed by a scale based on the salary cap",
+        "Average of top 5 player salaries",
+        "120% of the previous year's #1 pick"
+      ],
+      "correct": 1,
+      "explanation": "The Rookie Scale sets specific salary amounts for each draft position based on a percentage of the salary cap. The #1 pick has the highest predetermined amount.",
+      "category": "rookie-scale",
+      "difficulty": "easy",
+      "source": "Article VIII, Section 1(b)"
+    },
+    {
+      "id": 158,
+      "question": "What happens if a team fails to make a Qualifying Offer to a player whose fourth-year option was exercised?",
+      "options": [
+        "The player becomes an Unrestricted Free Agent",
+        "The player becomes a Restricted Free Agent anyway",
+        "The team retains exclusive negotiating rights",
+        "The player must re-enter the draft"
+      ],
+      "correct": 0,
+      "explanation": "If a team exercises the fourth-year option but fails to extend a Qualifying Offer after that season, the player becomes an Unrestricted Free Agent rather than a Restricted Free Agent.",
+      "category": "rookie-scale",
+      "difficulty": "hard",
+      "source": "Article VIII, Section 4(a)"
+    },
+    {
+      "id": 159,
+      "question": "Can Rookie Scale Contracts include performance bonuses?",
+      "options": [
+        "Yes, unlimited bonuses",
+        "No bonuses are allowed",
+        "Yes, but limited to 15% of base salary",
+        "Only if approved by the league"
+      ],
+      "correct": 1,
+      "explanation": "Rookie Scale Contracts cannot include performance bonuses. The salary is determined solely by the scale amount (within the 80-120% range) and cannot be enhanced with incentives.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 1(d)"
+    },
+    {
+      "id": 160,
+      "question": "If a first-round pick is drafted by Team A but traded to Team B before signing, which team's Rookie Scale applies?",
+      "options": [
+        "Team A (the drafting team)",
+        "Team B (the acquiring team)",
+        "The scale is renegotiated",
+        "The player's choice of either team"
+      ],
+      "correct": 1,
+      "explanation": "The draft pick slot determines the Rookie Scale amount regardless of which team signs the player. If traded, the acquiring team signs the player to the scale amount for that draft position.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 1(e)"
+    },
+    {
+      "id": 161,
+      "question": "What is the annual percentage increase for each year of a Rookie Scale Contract?",
+      "options": [
+        "Same salary each year",
+        "Approximately 20% increase each year",
+        "5% increase each year",
+        "Varies by draft position"
+      ],
+      "correct": 1,
+      "explanation": "The Rookie Scale includes built-in raises of approximately 20% for the second year, then for the option years. The exact percentages are predetermined in the scale table.",
+      "category": "rookie-scale",
+      "difficulty": "easy",
+      "source": "Article VIII, Section 1(b)"
+    },
+    {
+      "id": 162,
+      "question": "Can a team buy out a Rookie Scale Contract?",
+      "options": [
+        "Yes, at any time",
+        "Yes, but only after the second year",
+        "No, these contracts cannot be bought out",
+        "Only with league approval"
+      ],
+      "correct": 2,
+      "explanation": "Rookie Scale Contracts cannot be bought out. The team's only options are to keep the player, trade them, or waive them (which would still count against the cap unless waived via the stretch provision).",
+      "category": "rookie-scale",
+      "difficulty": "hard",
+      "source": "Article VIII, Section 1(f)"
+    },
+    {
+      "id": 163,
+      "question": "If the 15th pick in the draft signs for 120% of the Rookie Scale amount, what does the 16th pick's maximum possible salary become?",
+      "options": [
+        "Also 120% of their scale amount (unchanged)",
+        "Must be less than the 15th pick",
+        "Can be higher than the 15th pick if at 120%",
+        "The same dollar amount as the 15th pick"
+      ],
+      "correct": 0,
+      "explanation": "Each draft slot has its own scale amount. The 16th pick can still sign for up to 120% of their scale amount, which may result in overlap where a lower pick makes similar money if signed at maximum.",
+      "category": "rookie-scale",
+      "difficulty": "hard",
+      "source": "Article VIII, Section 1(c)"
+    },
+    {
+      "id": 164,
+      "question": "By when must a team exercise the fourth-year option on a Rookie Scale Contract?",
+      "options": [
+        "Before October 31 of the third year",
+        "Before the trade deadline of the third year",
+        "Before the end of the third year season",
+        "By July 1 following the third year"
+      ],
+      "correct": 0,
+      "explanation": "Like the third-year option, the fourth-year option must be exercised by October 31, but of the third year. This gives teams three seasons to evaluate before committing to year four.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 2(b)"
+    },
+    {
+      "id": 165,
+      "question": "What is the minimum salary a first-round pick can sign for as a percentage of their Rookie Scale amount?",
+      "options": [
+        "75%",
+        "80%",
+        "90%",
+        "100% (no minimum negotiation)"
+      ],
+      "correct": 1,
+      "explanation": "The minimum is 80% of the Rookie Scale amount. In practice, almost all first-round picks sign for at least 100% or close to 120%, but 80% is the floor.",
+      "category": "rookie-scale",
+      "difficulty": "easy",
+      "source": "Article VIII, Section 1(c)"
+    },
+    {
+      "id": 166,
+      "question": "If both the third and fourth-year options are exercised, when is the earliest a Rookie Scale player can sign an extension?",
+      "options": [
+        "After completing the second year",
+        "After completing the third year",
+        "After the All-Star break of the third year",
+        "Immediately after the fourth-year option is exercised"
+      ],
+      "correct": 1,
+      "explanation": "A player must complete their third season before they are eligible to sign a Rookie Scale extension. This typically happens in the summer between years three and four.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 3(a)"
+    },
+    {
+      "id": 167,
+      "question": "Can a team convert a Rookie Scale Contract to a Two-Way Contract?",
+      "options": [
+        "Yes, with player consent",
+        "Yes, unilaterally by the team",
+        "No, these are separate contract types",
+        "Only in the first year"
+      ],
+      "correct": 2,
+      "explanation": "Rookie Scale Contracts and Two-Way Contracts are distinct contract types with different rules. A first-round pick signs a Rookie Scale Contract and it cannot be converted to a Two-Way.",
+      "category": "rookie-scale",
+      "difficulty": "easy",
+      "source": "Article VIII, Section 1(a)"
+    },
+    {
+      "id": 168,
+      "question": "What percentage of the salary cap does the #1 overall pick's first-year salary typically represent?",
+      "options": [
+        "About 2-3%",
+        "About 5-7%",
+        "About 10-12%",
+        "About 15-18%"
+      ],
+      "correct": 1,
+      "explanation": "The #1 pick's first-year salary is approximately 5-7% of the salary cap, depending on the specific cap amount. This percentage is defined in the Rookie Scale table.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 1(b)"
+    },
+    {
+      "id": 169,
+      "question": "If a Rookie Scale player is waived and claimed by another team, what happens to the team options?",
+      "options": [
+        "The claiming team inherits the same options",
+        "The options are voided and must be renegotiated",
+        "The player immediately becomes a free agent",
+        "Only the guaranteed years transfer"
+      ],
+      "correct": 0,
+      "explanation": "When a Rookie Scale player is claimed off waivers, the claiming team inherits the exact same contract terms, including the team option years and deadlines.",
+      "category": "rookie-scale",
+      "difficulty": "hard",
+      "source": "Article VIII, Section 5(a)"
+    },
+    {
+      "id": 170,
+      "question": "What is the maximum length of a Rookie Scale extension?",
+      "options": [
+        "3 years",
+        "4 years",
+        "5 years",
+        "No maximum, subject to negotiation"
+      ],
+      "correct": 1,
+      "explanation": "A Rookie Scale extension can be for up to 4 years beyond the current contract. Combined with the option years, this means a player could be under team control for up to 8 years total.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 3(b)"
+    },
+    {
+      "id": 171,
+      "question": "Does the Rookie Scale apply to second-round draft picks?",
+      "options": [
+        "Yes, identical scale applies",
+        "Yes, but at 50% of first-round amounts",
+        "No, second-round picks negotiate freely",
+        "Only if they're selected in the top 45"
+      ],
+      "correct": 2,
+      "explanation": "The Rookie Scale only applies to first-round picks (picks 1-30). Second-round picks can sign for any amount up to the maximum salary, often signing for minimum contracts or partial guarantees.",
+      "category": "rookie-scale",
+      "difficulty": "easy",
+      "source": "Article VIII, Section 1(a)"
+    },
+    {
+      "id": 172,
+      "question": "If a first-round pick refuses to sign with the team that drafted them, what are the team's rights?",
+      "options": [
+        "Exclusive rights for 1 year only",
+        "Exclusive rights until the next draft",
+        "Exclusive rights indefinitely until rights are renounced",
+        "Rights expire after 30 days"
+      ],
+      "correct": 2,
+      "explanation": "A team retains exclusive negotiating rights to a first-round pick indefinitely until they renounce those rights or trade them. The pick cannot sign elsewhere or re-enter the draft.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 6(a)"
+    },
+    {
+      "id": 173,
+      "question": "What happens to Rookie Scale salaries when the salary cap increases significantly?",
+      "options": [
+        "Existing contracts are renegotiated upward",
+        "Existing contracts remain at original amounts",
+        "Players receive a one-time bonus",
+        "Contracts are automatically adjusted by cap percentage"
+      ],
+      "correct": 1,
+      "explanation": "Rookie Scale Contracts are based on the cap at the time of signing. If the cap increases dramatically (like it did in 2016), players already under contract do not receive adjustments.",
+      "category": "rookie-scale",
+      "difficulty": "hard",
+      "source": "Article VIII, Section 1(b)"
+    },
+    {
+      "id": 174,
+      "question": "Can a player decline their fourth-year team option to become a free agent early?",
+      "options": [
+        "Yes, at any time",
+        "Yes, with 30 days notice",
+        "No, only the team can decline the option",
+        "Only if they made All-NBA"
+      ],
+      "correct": 2,
+      "explanation": "The third and fourth-year options are TEAM options only. The player has no ability to decline them. Only the team decides whether to exercise or decline each option.",
+      "category": "rookie-scale",
+      "difficulty": "easy",
+      "source": "Article VIII, Section 2(a)"
+    },
+    {
+      "id": 175,
+      "question": "For Rookie Scale extension eligibility, does playing time in the third year matter?",
+      "options": [
+        "Yes, must play in 50+ games",
+        "Yes, must average 15+ minutes per game",
+        "No, just must complete the third season",
+        "Yes, must not be injured for more than 30 days"
+      ],
+      "correct": 2,
+      "explanation": "Extension eligibility is based solely on completing the third season, not on games played or performance. Even injured players or those who barely played can sign extensions after year three.",
+      "category": "rookie-scale",
+      "difficulty": "medium",
+      "source": "Article VIII, Section 3(a)"
+    }
+  ]
+}

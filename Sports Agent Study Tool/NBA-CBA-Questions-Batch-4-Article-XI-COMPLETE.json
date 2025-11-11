@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "title": "NBA CBA Study Materials - Batch 4: Article XI - Free Agency",
+    "version": "2023 CBA",
+    "batch": 4,
+    "article": "Article XI",
+    "totalQuestions": 40,
+    "createdDate": "2025-10-06",
+    "importance": "CRITICAL - Agents must master free agency rules",
+    "difficulty": {
+      "easy": 12,
+      "medium": 20,
+      "hard": 8
+    }
+  },
+  "studyNote": "Article XI is ESSENTIAL for agents. Understanding the difference between Restricted and Unrestricted Free Agency, qualifying offers, and the Right of First Refusal is fundamental to representing players.",
+  "questions": [
+    {
+      "id": "art11-q001",
+      "question": "What is the primary difference between Restricted and Unrestricted Free Agency?",
+      "options": [
+        "Salary limits",
+        "Contract length restrictions",
+        "Current team's right to match any offer for Restricted FAs",
+        "Age requirements"
+      ],
+      "correct": 2,
+      "explanation": "The key difference is that a Restricted Free Agent's current team has the Right of First Refusal - they can match any offer sheet and retain the player. Unrestricted Free Agents can sign anywhere.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XI, Section 5"
+    },
+    {
+      "id": "art11-q002",
+      "question": "What is a Qualifying Veteran Free Agent?",
+      "options": [
+        "Any veteran free agent",
+        "A player who played for the same team for 3+ consecutive years",
+        "Players over 30 years old",
+        "Players with All-Star selections"
+      ],
+      "correct": 1,
+      "explanation": "A Qualifying Veteran Free Agent is a player who spent 3 consecutive years with the same team (without being waived or changing teams as a free agent) before becoming a free agent.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 1(e) & Article I, Section 1(yy)"
+    },
+    {
+      "id": "art11-q003",
+      "question": "What is an Early Qualifying Veteran Free Agent?",
+      "options": [
+        "A player under 25",
+        "A player who spent 2 consecutive years with the same team",
+        "A rookie free agent",
+        "A player who declares early"
+      ],
+      "correct": 1,
+      "explanation": "An Early Qualifying Veteran Free Agent is a player who played for the same team for 2 consecutive years (vs 3 years for full Qualifying status).",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 1(e) & Article I, Section 1(t)"
+    },
+    {
+      "id": "art11-q004",
+      "question": "When does the NBA free agency period officially begin?",
+      "options": [
+        "July 1 at 12:01 AM",
+        "After the Moratorium Period ends (typically July 6 at 12:01 PM Eastern)",
+        "Immediately after the Finals",
+        "August 1"
+      ],
+      "correct": 1,
+      "explanation": "The Moratorium Period runs from July 1-6. Contracts can be negotiated during this time but cannot be signed until 12:01 PM Eastern on the last day of the Moratorium (typically July 6).",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article II, Section 15"
+    },
+    {
+      "id": "art11-q005",
+      "question": "What can happen during the Moratorium Period (July 1-6)?",
+      "options": [
+        "Nothing, all activity is frozen",
+        "Teams can negotiate with free agents but cannot sign contracts",
+        "Contracts can be signed immediately",
+        "Only trades are allowed"
+      ],
+      "correct": 1,
+      "explanation": "During the Moratorium, teams can negotiate agreements with free agents and trades can be agreed upon, but no contracts can be officially signed until the Moratorium ends.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article II, Section 15"
+    },
+    {
+      "id": "art11-q006",
+      "question": "What is a Qualifying Offer?",
+      "options": [
+        "Any contract offer",
+        "A required one-year offer a team must make to make their player a Restricted Free Agent",
+        "An offer above the max",
+        "A minimum salary offer"
+      ],
+      "correct": 1,
+      "explanation": "A Qualifying Offer is a required one-year contract offer that a team must extend to certain free agents by a deadline to make them Restricted Free Agents with Right of First Refusal.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XI, Section 4"
+    },
+    {
+      "id": "art11-q007",
+      "question": "By when must a team extend a Qualifying Offer to make a player a Restricted Free Agent?",
+      "options": [
+        "By June 1",
+        "By June 30 at 11:59 PM",
+        "By July 1",
+        "By the end of the Moratorium"
+      ],
+      "correct": 1,
+      "explanation": "Teams must extend Qualifying Offers by June 30 at 11:59 PM Eastern to retain the Right of First Refusal and make the player a Restricted Free Agent.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 4(a)"
+    },
+    {
+      "id": "art11-q008",
+      "question": "What is an Offer Sheet?",
+      "options": [
+        "Any contract offer",
+        "A written contract offer from a new team to a Restricted Free Agent that the player's current team can match",
+        "A trade proposal",
+        "An extension offer"
+      ],
+      "correct": 1,
+      "explanation": "An Offer Sheet is a formal contract offer from a new team to a Restricted Free Agent. The player's Prior Team has the Right of First Refusal to match it.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XI, Section 5(b)"
+    },
+    {
+      "id": "art11-q009",
+      "question": "How long does a team have to match an Offer Sheet for a Restricted Free Agent?",
+      "options": [
+        "24 hours",
+        "48 hours",
+        "72 hours",
+        "One week"
+      ],
+      "correct": 1,
+      "explanation": "The Prior Team has 48 hours from receiving the Offer Sheet to decide whether to match it and retain the player or let him go to the new team.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 5(c)"
+    },
+    {
+      "id": "art11-q010",
+      "question": "If a team matches an Offer Sheet, what are the contract terms?",
+      "options": [
+        "Team can negotiate different terms",
+        "Team must match it exactly - same salary, years, and terms",
+        "Team can offer more money",
+        "Team can change the length"
+      ],
+      "correct": 1,
+      "explanation": "When exercising the Right of First Refusal, the Prior Team must match the Offer Sheet exactly - same compensation, same years, same terms.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 5(e)"
+    },
+    {
+      "id": "art11-q011",
+      "question": "Can a player sign an Offer Sheet and then back out before the Prior Team matches?",
+      "options": [
+        "Yes, anytime",
+        "No, once signed the Offer Sheet is binding (subject to Prior Team's right to match)",
+        "Only in the first 24 hours",
+        "Yes, with a penalty"
+      ],
+      "correct": 1,
+      "explanation": "Once a Restricted Free Agent signs an Offer Sheet, it becomes binding. The player cannot withdraw - either the Prior Team matches or the player goes to the new team.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 5(c)"
+    },
+    {
+      "id": "art11-q012",
+      "question": "What happens if a Restricted Free Agent receives no Offer Sheet by the end of the Moratorium?",
+      "options": [
+        "Becomes unrestricted immediately",
+        "Can only sign the Qualifying Offer",
+        "Can sign with any team and Prior Team retains matching rights all season",
+        "Becomes a free agent"
+      ],
+      "correct": 2,
+      "explanation": "If no Offer Sheet is signed during the Moratorium, the player remains a Restricted Free Agent all season. The Prior Team retains matching rights for any Offer Sheet signed later.",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article XI, Section 5(a)"
+    },
+    {
+      "id": "art11-q013",
+      "question": "Can a team extend the deadline for a player to accept a Qualifying Offer?",
+      "options": [
+        "No, deadline is fixed",
+        "Yes, team can extend until March 1",
+        "Only with player consent",
+        "Yes, until October 1"
+      ],
+      "correct": 1,
+      "explanation": "Teams can extend the Qualifying Offer acceptance deadline until March 1, which allows them to keep the player restricted longer into the season.",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article XI, Section 4(c)"
+    },
+    {
+      "id": "art11-q014",
+      "question": "What happens if a Restricted Free Agent accepts the Qualifying Offer?",
+      "options": [
+        "Becomes unrestricted immediately",
+        "Signs a one-year deal with the Prior Team for the QO amount",
+        "Can still sign Offer Sheets",
+        "Must renegotiate"
+      ],
+      "correct": 1,
+      "explanation": "If a player accepts the Qualifying Offer, they sign a one-year contract with their Prior Team for the QO amount and become an Unrestricted Free Agent the following summer.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XI, Section 4(b)"
+    },
+    {
+      "id": "art11-q015",
+      "question": "Can a player negotiate with multiple teams simultaneously during free agency?",
+      "options": [
+        "No, must pick one team",
+        "Yes, players (and their agents) can negotiate with multiple teams at once",
+        "Only Unrestricted FAs",
+        "Only with league approval"
+      ],
+      "correct": 1,
+      "explanation": "Free agents and their agents are permitted to negotiate with multiple teams simultaneously during the free agency period.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XI, Section 1"
+    },
+    {
+      "id": "art11-q016",
+      "question": "What is the minimum salary for a Qualifying Offer for most players?",
+      "options": [
+        "League minimum",
+        "125% of player's prior salary",
+        "100% of player's prior salary",
+        "$5 million"
+      ],
+      "correct": 1,
+      "explanation": "For most Restricted Free Agents, the Qualifying Offer must be at least 125% of the player's prior season salary (with some exceptions for specific circumstances).",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article XI, Section 4(a)"
+    },
+    {
+      "id": "art11-q017",
+      "question": "Can Unrestricted Free Agents sign with any team during the Moratorium?",
+      "options": [
+        "Yes, immediately",
+        "No, must wait until Moratorium ends to officially sign",
+        "Only with their Prior Team",
+        "Yes, but cannot be announced"
+      ],
+      "correct": 1,
+      "explanation": "While negotiations can occur during the Moratorium, no contracts (restricted or unrestricted) can be officially signed until the Moratorium ends.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article II, Section 15"
+    },
+    {
+      "id": "art11-q018",
+      "question": "What is a 'Non-Qualifying Veteran Free Agent'?",
+      "options": [
+        "Any bad player",
+        "A veteran who doesn't meet the 2 or 3 year tenure requirements with his Prior Team",
+        "Undrafted players",
+        "Players over 35"
+      ],
+      "correct": 1,
+      "explanation": "A Non-Qualifying Veteran Free Agent is a player who became a free agent but didn't spend enough consecutive time with their Prior Team to qualify as an Early Qualifying or Qualifying Veteran Free Agent.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article I, Section 1(rr)"
+    },
+    {
+      "id": "art11-q019",
+      "question": "Can a team sign-and-trade a free agent?",
+      "options": [
+        "No, never",
+        "Yes, team can re-sign their own free agent and immediately trade him",
+        "Only Restricted FAs",
+        "Only in the offseason"
+      ],
+      "correct": 1,
+      "explanation": "Sign-and-trade transactions allow a team to re-sign its own free agent and simultaneously trade him to another team, benefiting all parties involved.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article VII, Section 8(e)"
+    },
+    {
+      "id": "art11-q020",
+      "question": "What restriction applies to teams acquiring players via sign-and-trade?",
+      "options": [
+        "None",
+        "They are hard-capped at the First Apron for that season",
+        "Cannot make other trades",
+        "Must waive a player"
+      ],
+      "correct": 1,
+      "explanation": "Teams that acquire a player via sign-and-trade are hard-capped at the First Apron for the entire season - they absolutely cannot exceed it.",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article VII, Section 8(e)(2)"
+    },
+    {
+      "id": "art11-q021",
+      "question": "When can teams first contact free agents?",
+      "options": [
+        "Immediately after the Finals",
+        "June 30 at 6:00 PM Eastern",
+        "July 1 at 12:01 AM",
+        "After Moratorium ends"
+      ],
+      "correct": 1,
+      "explanation": "The 'legal tampering period' begins on June 30 at 6:00 PM Eastern, allowing teams to officially contact and negotiate with free agents before the Moratorium.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 1"
+    },
+    {
+      "id": "art11-q022",
+      "question": "What is 'tampering' in the context of free agency?",
+      "options": [
+        "Legal negotiations",
+        "Illegal contact with players under contract or before the legal tampering period",
+        "Negotiating with agents",
+        "Making offers"
+      ],
+      "correct": 1,
+      "explanation": "Tampering is when teams make unauthorized contact with players who are under contract with another team or before the legal tampering period begins.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XXXV & League Rules"
+    },
+    {
+      "id": "art11-q023",
+      "question": "Can a player under contract negotiate with other teams?",
+      "options": [
+        "Yes, anytime",
+        "No, it's prohibited until they become a free agent",
+        "Only in the last year of contract",
+        "With team permission only"
+      ],
+      "correct": 1,
+      "explanation": "Players under contract cannot negotiate with other teams. This would constitute tampering and is prohibited until the player becomes a free agent.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XXXV"
+    },
+    {
+      "id": "art11-q024",
+      "question": "What happens to a player's free agent rights if he plays overseas after his contract ends?",
+      "options": [
+        "Loses free agent status",
+        "Team retains rights indefinitely",
+        "Becomes Unrestricted Free Agent when he returns",
+        "Must re-enter draft"
+      ],
+      "correct": 2,
+      "explanation": "If a free agent plays overseas, he remains a free agent. When he decides to return to the NBA, he's still an Unrestricted Free Agent unless his Prior Team retained specific rights.",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article XI, Section 1"
+    },
+    {
+      "id": "art11-q025",
+      "question": "Can a team withdraw a Qualifying Offer after extending it?",
+      "options": [
+        "Yes, anytime",
+        "No, once extended it cannot be withdrawn",
+        "Only before July 1",
+        "With league approval"
+      ],
+      "correct": 1,
+      "explanation": "Once a team extends a Qualifying Offer, it cannot be withdrawn. The offer remains valid and the player can accept it at any time before the deadline.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 4"
+    },
+    {
+      "id": "art11-q026",
+      "question": "What is the maximum length of an Offer Sheet to a Restricted Free Agent?",
+      "options": [
+        "2 years",
+        "3 years",
+        "4 years",
+        "5 years"
+      ],
+      "correct": 2,
+      "explanation": "Offer Sheets to Restricted Free Agents (from teams other than the Prior Team) are limited to a maximum of 4 years, while the Prior Team can offer up to 5 years using Bird Rights.",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article XI, Section 5(d)"
+    },
+    {
+      "id": "art11-q027",
+      "question": "If a player becomes a free agent at age 35, are there special considerations?",
+      "options": [
+        "No, same rules apply",
+        "Yes, special 'Over 38' contract rules may apply for longer deals",
+        "Cannot sign multi-year deals",
+        "League minimum only"
+      ],
+      "correct": 1,
+      "explanation": "For players 35-36 signing contracts that extend past age 38, special 'Over 38' rules apply affecting how salary is allocated for cap purposes.",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article VII, Section 3(a)(2)"
+    },
+    {
+      "id": "art11-q028",
+      "question": "Can a Restricted Free Agent sign an Offer Sheet that includes a player option?",
+      "options": [
+        "Yes, any terms are allowed",
+        "No, Offer Sheets cannot include player options or Early Termination Options",
+        "Only in the final year",
+        "With Prior Team approval"
+      ],
+      "correct": 1,
+      "explanation": "Offer Sheets to Restricted Free Agents cannot include player options or Early Termination Options (ETOs) to prevent manipulation of the matching process.",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article XI, Section 5(d)"
+    },
+    {
+      "id": "art11-q029",
+      "question": "What happens if a player and team cannot agree on whether a player is Restricted or Unrestricted?",
+      "options": [
+        "Player decides",
+        "Dispute goes to the System Arbitrator",
+        "Team decides",
+        "Automatic UFA status"
+      ],
+      "correct": 1,
+      "explanation": "Disputes about free agent status (Restricted vs Unrestricted) are resolved by the System Arbitrator through the grievance and arbitration process.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XXXII"
+    },
+    {
+      "id": "art11-q030",
+      "question": "Can a team renounce a Restricted Free Agent to create cap space?",
+      "options": [
+        "Yes, but player becomes Unrestricted",
+        "No, cannot renounce RFAs",
+        "Only after one year",
+        "Only Non-QVFAs"
+      ],
+      "correct": 0,
+      "explanation": "Teams can renounce their restricted free agents to create cap space, but doing so makes the player an Unrestricted Free Agent whom they can only re-sign using cap room or minimum exception.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article VII, Section 4(g)"
+    },
+    {
+      "id": "art11-q031",
+      "question": "What is 'cap hold' for free agents?",
+      "options": [
+        "Amount that counts against the cap while player is a free agent",
+        "A penalty",
+        "Player's salary",
+        "Nothing"
+      ],
+      "correct": 0,
+      "explanation": "A free agent's 'cap hold' is an amount that counts against the team's salary cap until the player signs elsewhere or is renounced, based on the player's prior salary.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article VII, Section 4(d)"
+    },
+    {
+      "id": "art11-q032",
+      "question": "Can a player accept a Qualifying Offer and then try to renegotiate during the season?",
+      "options": [
+        "Yes, anytime",
+        "No, one-year QO contracts cannot be renegotiated or extended",
+        "Only after All-Star break",
+        "With team approval"
+      ],
+      "correct": 1,
+      "explanation": "Contracts signed as Qualifying Offers are for one year and cannot be renegotiated or extended. The player will become an Unrestricted Free Agent the following summer.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article VII, Section 7"
+    },
+    {
+      "id": "art11-q033",
+      "question": "What is a 'Maximum Qualifying Offer'?",
+      "options": [
+        "The highest QO amount",
+        "A special QO for certain Rookie Scale players who meet performance criteria (MVP, All-NBA, etc.)",
+        "QO for max players",
+        "The league average"
+      ],
+      "correct": 1,
+      "explanation": "A Maximum Qualifying Offer is a special QO that must be made to certain Rookie Scale players who earned specific honors (MVP, DPOY, 2x All-NBA), allowing the team to make them Restricted.",
+      "category": "free-agency",
+      "difficulty": "hard",
+      "source": "Article XI, Section 4(a)(ii)"
+    },
+    {
+      "id": "art11-q034",
+      "question": "If a team matches an Offer Sheet, when does the new contract begin?",
+      "options": [
+        "Immediately",
+        "Next season",
+        "Depends on the Offer Sheet terms - could be immediate or next season",
+        "After 30 days"
+      ],
+      "correct": 2,
+      "explanation": "The matched contract begins whenever the Offer Sheet specified - some Offer Sheets are for the current season, others for the following season.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 5"
+    },
+    {
+      "id": "art11-q035",
+      "question": "Can agents negotiate with teams on behalf of players who are still under contract?",
+      "options": [
+        "Yes, for future planning",
+        "No, this constitutes improper contact/tampering",
+        "Only in the final year",
+        "Only with current team"
+      ],
+      "correct": 1,
+      "explanation": "Agents cannot negotiate with other teams on behalf of players under contract. This would be tampering and violates CBA and NBPA regulations.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XXXV & NBPA Regulations"
+    },
+    {
+      "id": "art11-q036",
+      "question": "What percentage of players typically become Unrestricted vs Restricted Free Agents?",
+      "options": [
+        "Mostly restricted",
+        "50/50 split",
+        "Majority become Unrestricted (most are either QVFAs/EQVFAs with their teams or have insufficient tenure)",
+        "All are restricted first"
+      ],
+      "correct": 2,
+      "explanation": "Most free agents are either Unrestricted (sufficient tenure with their team qualifying them for Bird Rights) or are made Unrestricted by teams not extending Qualifying Offers.",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Practical application of Article XI"
+    },
+    {
+      "id": "art11-q037",
+      "question": "Can a player's agent begin negotiating during the legal tampering period?",
+      "options": [
+        "No, must wait for player to do it",
+        "Yes, agents can negotiate on behalf of their clients starting at 6PM ET on June 30",
+        "Only with Prior Team",
+        "Not until July 1"
+      ],
+      "correct": 1,
+      "explanation": "During the legal tampering period (starting June 30 at 6PM ET), agents can negotiate on behalf of their free agent clients with any team.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XI, Section 1"
+    },
+    {
+      "id": "art11-q038",
+      "question": "If a Restricted Free Agent signs an Offer Sheet during the season (after the Moratorium), how long does the Prior Team have to match?",
+      "options": [
+        "24 hours",
+        "48 hours (same as during Moratorium)",
+        "One week",
+        "7 days"
+      ],
+      "correct": 1,
+      "explanation": "The Prior Team has 48 hours to match an Offer Sheet regardless of when during the year it's signed (Moratorium or regular season).",
+      "category": "free-agency",
+      "difficulty": "medium",
+      "source": "Article XI, Section 5(c)"
+    },
+    {
+      "id": "art11-q039",
+      "question": "What happens if a team fails to extend a Qualifying Offer to a player they want to keep as a Restricted Free Agent?",
+      "options": [
+        "Player becomes Unrestricted Free Agent immediately",
+        "Can extend it late with penalty",
+        "Player stays restricted",
+        "League intervenes"
+      ],
+      "correct": 0,
+      "explanation": "If a team misses the June 30 deadline to extend a Qualifying Offer, the player immediately becomes an Unrestricted Free Agent and the team loses matching rights.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XI, Section 4(a)"
+    },
+    {
+      "id": "art11-q040",
+      "question": "Can a player who accepts a Qualifying Offer become a free agent mid-season by requesting a trade?",
+      "options": [
+        "Yes",
+        "No, they're under contract for the full season",
+        "Only after All-Star break",
+        "With team permission"
+      ],
+      "correct": 1,
+      "explanation": "Accepting a Qualifying Offer creates a binding one-year contract. The player cannot become a free agent mid-season but will become an Unrestricted Free Agent the following summer.",
+      "category": "free-agency",
+      "difficulty": "easy",
+      "source": "Article XI, Section 4(b)"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+        "Trading bonuses"
+      ],
+      "correct": 1,
+      "explanation": "Salary cap smoothing refers to mechanisms that prevent dramatic year-over-year cap increases. When BRI jumps significantly, the cap increase can be spread over multiple years to provide stability.",
+      "category": "salary-cap",
+      "difficulty": "hard",
+      "source": "Article VII, Section 2(f)"
+    },
+    {
+      "id": 50,
+      "question": "What is a renegotiation?",
+      "options": [
+        "Trading the player",
+        "Amending a contract to INCREASE current-year salary and/or unlikely bonuses",
+        "Extending contract length",
+        "Adding team option"
+      ],
+      "correct": 1,
+      "explanation": "A renegotiation is an amendment that INCREASES a player's salary and/or unlikely bonuses for the current or upcoming season. Salary can only be increased, never decreased.",
+      "category": "salary-cap",
+      "difficulty": "hard",
+      "source": "Article VII, Section 7(c)"
+    }
+  ]
+}

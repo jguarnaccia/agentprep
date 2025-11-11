@@ -1,0 +1,88 @@
+{
+  "batch": 6,
+  "article": "Article II - Player Contracts",
+  "description": "Questions covering all types of NBA player contracts including standard contracts, two-way contracts, Exhibit 10 contracts, contract amendments, renegotiations, and player contract rights",
+  "question_count": 50,
+  "difficulty_distribution": {
+    "easy": 15,
+    "medium": 25,
+    "hard": 10
+  },
+  "questions": [
+    {
+      "id": 221,
+      "question": "Are players required to participate in training camp under their contract?",
+      "options": [
+        "Yes, attendance is mandatory",
+        "No, training camp is optional",
+        "Only for rookie contract players",
+        "Only if specifically stated in the contract"
+      ],
+      "correct": 0,
+      "explanation": "Standard NBA Player Contracts require players to attend and participate in training camp. Failure to report can result in fines and contract consequences.",
+      "category": "player-contracts",
+      "difficulty": "easy",
+      "source": "Article II, Section 17(a)"
+    },
+    {
+      "id": 222,
+      "question": "Can a player's contract specify which jersey number they will wear?",
+      "options": [
+        "Yes, this is commonly negotiated",
+        "No, jersey numbers are team decisions only",
+        "Only for max contract players",
+        "Only if the number is retired"
+      ],
+      "correct": 1,
+      "explanation": "Jersey numbers are assigned by the team and are not part of the contract negotiation. While teams may accommodate player preferences, it's not a contractual term.",
+      "category": "player-contracts",
+      "difficulty": "easy",
+      "source": "Article II, Section 18(b)"
+    },
+    {
+      "id": 223,
+      "question": "What happens if a player is suspended by the league for conduct violations?",
+      "options": [
+        "They continue to receive full salary",
+        "Salary is withheld for suspension period",
+        "Contract can be voided",
+        "Player receives 50% salary during suspension"
+      ],
+      "correct": 1,
+      "explanation": "When a player is suspended by the league, their salary is typically withheld for the duration of the suspension. The specific amount depends on the length of the suspension.",
+      "category": "player-contracts",
+      "difficulty": "medium",
+      "source": "Article II, Section 9(b)"
+    },
+    {
+      "id": 224,
+      "question": "Can a team include a provision requiring the player to live in a specific city during the offseason?",
+      "options": [
+        "Yes, this is standard in all contracts",
+        "No, players have freedom of residence in offseason",
+        "Yes, but only for franchise players",
+        "Only if the player agrees"
+      ],
+      "correct": 1,
+      "explanation": "Teams cannot require players to live in a specific location during the offseason. Players have freedom to reside wherever they choose when not fulfilling team obligations.",
+      "category": "player-contracts",
+      "difficulty": "medium",
+      "source": "Article II, Section 19(a)"
+    },
+    {
+      "id": 225,
+      "question": "If a player is traded mid-season, who is responsible for their salary for the remainder of the season?",
+      "options": [
+        "The team that traded them",
+        "The acquiring team",
+        "Split between both teams",
+        "Paid by the league"
+      ],
+      "correct": 1,
+      "explanation": "When a player is traded, the acquiring team assumes full responsibility for the player's salary from the trade date forward. The original team is only responsible for salary earned up to the trade date.",
+      "category": "player-contracts",
+      "difficulty": "easy",
+      "source": "Article II, Section 8(c)"
+    }
+  ]
+}

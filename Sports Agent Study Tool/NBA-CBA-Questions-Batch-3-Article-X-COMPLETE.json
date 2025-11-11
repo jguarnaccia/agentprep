@@ -1,0 +1,458 @@
+{
+  "metadata": {
+    "title": "NBA CBA Study Materials - Batch 3: Article X - Player Eligibility and NBA Draft",
+    "version": "2023 CBA",
+    "batch": 3,
+    "article": "Article X",
+    "totalQuestions": 30,
+    "createdDate": "2025-10-06",
+    "difficulty": {
+      "easy": 12,
+      "medium": 12,
+      "hard": 6
+    }
+  },
+  "studyNote": "Article X covers NBA Draft eligibility, draft rights, and the draft process. These are frequently tested topics as agents must know when players are eligible and how draft rights work.",
+  "questions": [
+    {
+      "id": "art10-q001",
+      "question": "What is the minimum age requirement for a player to be eligible for the NBA Draft?",
+      "options": ["18 years old", "19 years old", "20 years old", "21 years old"],
+      "correct": 1,
+      "explanation": "Players must be at least 19 years old during the calendar year of the draft. Additionally, at least one NBA season must have elapsed since their high school graduation.",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 1(b)(i)"
+    },
+    {
+      "id": "art10-q002",
+      "question": "How much time must elapse between a player's high school graduation and draft eligibility?",
+      "options": [
+        "6 months",
+        "One full calendar year",
+        "At least one NBA season",
+        "Two years"
+      ],
+      "correct": 2,
+      "explanation": "At least one NBA season must have elapsed since the player's high school class graduated, even if the player turned 19 earlier.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 1(b)(i)"
+    },
+    {
+      "id": "art10-q003",
+      "question": "Can a player who turns 19 in December be drafted in the June draft of that same year?",
+      "options": [
+        "Yes, if already 19",
+        "No, must be 19 during the calendar year of the draft AND one NBA season after HS graduation",
+        "Yes, with special permission",
+        "Only if they're international"
+      ],
+      "correct": 1,
+      "explanation": "The player must meet BOTH requirements: be 19 during the calendar year of the draft AND have at least one NBA season elapse since HS graduation.",
+      "category": "draft",
+      "difficulty": "hard",
+      "source": "Article X, Section 1(b)"
+    },
+    {
+      "id": "art10-q004",
+      "question": "What is an 'early entry' player?",
+      "options": [
+        "Any high school player",
+        "A player who declares for the draft before their college eligibility expires",
+        "International players only",
+        "Players under 21"
+      ],
+      "correct": 1,
+      "explanation": "An early entry player is someone who makes themselves eligible for the draft before exhausting their college eligibility, typically college underclassmen.",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 6"
+    },
+    {
+      "id": "art10-q005",
+      "question": "By when must an early entry player withdraw from the draft to retain college eligibility?",
+      "options": [
+        "By the draft date",
+        "10 days before the draft",
+        "By the early entry withdrawal deadline set by the NBA (typically mid-May)",
+        "30 days before the draft"
+      ],
+      "correct": 2,
+      "explanation": "The NBA sets a specific early entry withdrawal deadline each year, typically in mid-May. Players must withdraw by this date to retain NCAA eligibility.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 6(f)"
+    },
+    {
+      "id": "art10-q006",
+      "question": "How long does a team have exclusive negotiating rights to a first-round draft pick?",
+      "options": [
+        "1 year",
+        "2 years from draft",
+        "Until one year after the draft OR one year after college class graduates, whichever is later",
+        "Indefinitely"
+      ],
+      "correct": 2,
+      "explanation": "Teams have exclusive rights until the later of: one year from the draft date, or one year after the player's college class graduates.",
+      "category": "draft",
+      "difficulty": "hard",
+      "source": "Article X, Section 4(a)"
+    },
+    {
+      "id": "art10-q007",
+      "question": "What happens if a first-round pick doesn't sign with the team that drafted him within the exclusive negotiating period?",
+      "options": [
+        "He becomes a free agent immediately",
+        "Team loses draft rights and player enters next draft",
+        "Team retains rights for another year",
+        "Player can sign with any team"
+      ],
+      "correct": 1,
+      "explanation": "If a first-round pick doesn't sign during the team's exclusive negotiating period, the team loses its draft rights and the player becomes eligible for the next draft.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 4(b)"
+    },
+    {
+      "id": "art10-q008",
+      "question": "How long does a team have exclusive rights to a second-round draft pick?",
+      "options": [
+        "Same as first round picks",
+        "No exclusive rights, they become free agents immediately",
+        "3 years",
+        "6 months"
+      ],
+      "correct": 1,
+      "explanation": "Second-round picks do NOT receive the same protections as first-round picks. They can become free agents and sign with any team after the draft.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 4"
+    },
+    {
+      "id": "art10-q009",
+      "question": "Can international players who are playing professionally overseas declare for the draft?",
+      "options": [
+        "No, must play in college",
+        "Yes, if they meet age requirements and declare by deadline",
+        "Only if released by their team",
+        "Only if under 21"
+      ],
+      "correct": 1,
+      "explanation": "International players playing professionally can declare for the draft if they meet the age requirements (19 years old, one year after HS graduation equivalent).",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 1(c)"
+    },
+    {
+      "id": "art10-q010",
+      "question": "What is a 'draft and follow' arrangement?",
+      "options": [
+        "Drafting a player and trading him",
+        "This no longer exists in the current CBA",
+        "Drafting a college player early",
+        "Following a player's career"
+      ],
+      "correct": 1,
+      "explanation": "The 'draft and follow' system (where teams could draft players and retain rights while they played overseas) was eliminated in previous CBAs.",
+      "category": "draft",
+      "difficulty": "hard",
+      "source": "Historical CBA knowledge"
+    },
+    {
+      "id": "art10-q011",
+      "question": "By what date must a player declare for the draft as an early entry candidate?",
+      "options": [
+        "January 1",
+        "The early entry declaration deadline set by the NBA (typically 60 days before draft)",
+        "March 1",
+        "Draft day"
+      ],
+      "correct": 1,
+      "explanation": "The NBA sets an early entry declaration deadline each year, typically about 60 days before the draft (usually in late April).",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 6(d)"
+    },
+    {
+      "id": "art10-q012",
+      "question": "Can a player declare for the draft multiple times without being drafted?",
+      "options": [
+        "No, only once",
+        "Yes, unlimited times if they maintain eligibility",
+        "Only twice",
+        "Yes, but only if they withdraw before deadline"
+      ],
+      "correct": 1,
+      "explanation": "A player can declare for multiple drafts as long as they withdraw before the deadline each time (if they want to retain college eligibility).",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 6"
+    },
+    {
+      "id": "art10-q013",
+      "question": "What is the NBA Draft Combine?",
+      "options": [
+        "A required workout for all draft prospects",
+        "An optional pre-draft event where players can showcase skills, do medical exams, and interview with teams",
+        "Only for international players",
+        "A post-draft training camp"
+      ],
+      "correct": 1,
+      "explanation": "The Draft Combine is an optional event (though highly encouraged) where draft prospects participate in drills, measurements, medical exams, and team interviews.",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 9"
+    },
+    {
+      "id": "art10-q014",
+      "question": "Can teams conduct private workouts with draft prospects outside the combine?",
+      "options": [
+        "No, only combine workouts allowed",
+        "Yes, teams can conduct individual workouts",
+        "Only for first-round prospects",
+        "Only after the combine"
+      ],
+      "correct": 1,
+      "explanation": "Teams are permitted to conduct individual workouts with draft prospects in addition to or instead of combine participation.",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 8"
+    },
+    {
+      "id": "art10-q015",
+      "question": "If a player is drafted by a team, can the team trade his draft rights before he signs?",
+      "options": [
+        "No, must sign first",
+        "Yes, draft rights can be traded",
+        "Only on draft night",
+        "Only with player approval"
+      ],
+      "correct": 1,
+      "explanation": "Teams can trade draft rights to players they've selected, either on draft night or later, without the player having signed a contract.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 7"
+    },
+    {
+      "id": "art10-q016",
+      "question": "How many rounds are in the NBA Draft?",
+      "options": ["1 round", "2 rounds", "3 rounds", "7 rounds"],
+      "correct": 1,
+      "explanation": "The NBA Draft consists of 2 rounds, with 30 picks in each round (one for each team), for a total of 60 picks.",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 3"
+    },
+    {
+      "id": "art10-q017",
+      "question": "Can a team lose their draft pick as punishment for violating CBA rules?",
+      "options": [
+        "No, draft picks cannot be forfeited",
+        "Yes, the Commissioner can take away draft picks for certain violations",
+        "Only second-round picks",
+        "Only with NBPA approval"
+      ],
+      "correct": 1,
+      "explanation": "The Commissioner has authority to take away draft picks as punishment for serious CBA violations, including circumvention and other misconduct.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article XIII, Section 3"
+    },
+    {
+      "id": "art10-q018",
+      "question": "What happens if a drafted player plays professionally in another league after being drafted?",
+      "options": [
+        "Team loses draft rights immediately",
+        "Team retains draft rights but player's Rookie Scale amount is excluded from cap while playing overseas",
+        "Player becomes free agent",
+        "Nothing changes"
+      ],
+      "correct": 1,
+      "explanation": "If a first-round pick plays overseas, the team retains his rights but his cap hold is temporarily removed while he's under contract abroad.",
+      "category": "draft",
+      "difficulty": "hard",
+      "source": "Article X, Section 4(c) & Article VII, Section 4(e)(2)"
+    },
+    {
+      "id": "art10-q019",
+      "question": "Can a team renounce their draft rights to a player they selected?",
+      "options": [
+        "No, never",
+        "Yes, teams can renounce draft rights to create cap space",
+        "Only after 2 years",
+        "Only for second-round picks"
+      ],
+      "correct": 1,
+      "explanation": "Teams can renounce their exclusive draft rights to first-round picks (usually to create salary cap space), making the player a free agent.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 4(g)"
+    },
+    {
+      "id": "art10-q020",
+      "question": "What is required for a player from a foreign country to be draft eligible?",
+      "options": [
+        "Must play in NCAA",
+        "Same age requirements as US players (19 during calendar year)",
+        "Must be 21",
+        "No requirements"
+      ],
+      "correct": 1,
+      "explanation": "International players have the same age eligibility requirements as US players: must be 19 during the calendar year of the draft.",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 1(c)"
+    },
+    {
+      "id": "art10-q021",
+      "question": "If a player is automatically eligible (4 years after HS graduation) but doesn't declare, what happens?",
+      "options": [
+        "Cannot be drafted",
+        "Automatically included in draft pool even without declaring",
+        "Must wait another year",
+        "Becomes free agent"
+      ],
+      "correct": 1,
+      "explanation": "Players who are four years removed from high school graduation are automatically eligible and don't need to declare - they're automatically in the draft pool.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 1(b)(ii)"
+    },
+    {
+      "id": "art10-q022",
+      "question": "Can a player hire an agent and still withdraw from the draft to retain college eligibility?",
+      "options": [
+        "Yes, new NCAA rules allow this",
+        "No, hiring an agent makes the player permanently ineligible for college",
+        "Only certified agents",
+        "Only family members as agents"
+      ],
+      "correct": 0,
+      "explanation": "Recent NCAA rule changes allow players to hire agents and still withdraw from the draft by the deadline to retain college eligibility, under certain conditions.",
+      "category": "draft",
+      "difficulty": "hard",
+      "source": "NCAA Rules (as of 2019)"
+    },
+    {
+      "id": "art10-q023",
+      "question": "How are draft picks allocated to teams?",
+      "options": [
+        "Random lottery for all picks",
+        "Based on prior season record (worst teams pick first), with lottery for non-playoff teams",
+        "All teams pick in random order",
+        "Auction system"
+      ],
+      "correct": 1,
+      "explanation": "The draft lottery determines the order for the top picks among non-playoff teams, with remaining picks based on reverse order of record.",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 3 & NBA Constitution"
+    },
+    {
+      "id": "art10-q024",
+      "question": "Can teams trade future draft picks?",
+      "options": [
+        "No, only current year",
+        "Yes, teams can trade picks up to 7 years in advance",
+        "Only next year's pick",
+        "Only with league approval"
+      ],
+      "correct": 1,
+      "explanation": "Teams can trade draft picks up to 7 years in the future, though the 'Stepien Rule' prevents trading picks in consecutive years.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article VII, Section 8 & NBA Rules"
+    },
+    {
+      "id": "art10-q025",
+      "question": "What is the 'Stepien Rule'?",
+      "options": [
+        "A rule about agent fees",
+        "A rule preventing teams from trading first-round picks in consecutive years",
+        "A rule about draft eligibility",
+        "A salary cap rule"
+      ],
+      "correct": 1,
+      "explanation": "The Stepien Rule (named after former Cavaliers owner Ted Stepien) prevents teams from trading away first-round picks in consecutive years to protect franchises.",
+      "category": "draft",
+      "difficulty": "hard",
+      "source": "NBA Constitution, Article 15"
+    },
+    {
+      "id": "art10-q026",
+      "question": "Can a player who went undrafted become a free agent immediately?",
+      "options": [
+        "No, must wait one year",
+        "Yes, undrafted players are unrestricted free agents and can sign with any team",
+        "Only if they're over 21",
+        "Only international players"
+      ],
+      "correct": 1,
+      "explanation": "Players who are not selected in the draft become unrestricted free agents immediately and can sign with any team (often for Summer League initially).",
+      "category": "draft",
+      "difficulty": "easy",
+      "source": "Article X, Section 1"
+    },
+    {
+      "id": "art10-q027",
+      "question": "What medical information can teams request from draft prospects?",
+      "options": [
+        "None without consent",
+        "Complete medical records with player consent",
+        "Only combine results",
+        "Any information they want"
+      ],
+      "correct": 1,
+      "explanation": "Teams can request comprehensive medical information from draft prospects, but players must consent to sharing their medical records.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 9 & Article XXII"
+    },
+    {
+      "id": "art10-q028",
+      "question": "If there's a dispute about whether a player is eligible for the draft, who decides?",
+      "options": [
+        "The player decides",
+        "The NBA Commissioner makes the final determination",
+        "NBPA decides",
+        "Arbitrator decides"
+      ],
+      "correct": 1,
+      "explanation": "The Commissioner has the authority to make final determinations on draft eligibility disputes, subject to certain appeal rights.",
+      "category": "draft",
+      "difficulty": "medium",
+      "source": "Article X, Section 10"
+    },
+    {
+      "id": "art10-q029",
+      "question": "Can expansion teams participate in the regular NBA Draft?",
+      "options": [
+        "No, they have separate expansion drafts only",
+        "Yes, expansion teams receive picks in the regular draft, typically toward the end of the first round",
+        "Only after their first season",
+        "They get extra picks"
+      ],
+      "correct": 1,
+      "explanation": "Expansion teams participate in the regular NBA Draft and typically receive additional picks, often selecting near the end of the first round.",
+      "category": "draft",
+      "difficulty": "hard",
+      "source": "Article X, Section 2 & Article XL"
+    },
+    {
+      "id": "art10-q030",
+      "question": "What happens to the draft rights of a player who retires without ever playing in the NBA?",
+      "options": [
+        "Team keeps rights forever",
+        "Rights expire after one year",
+        "Team loses rights when player retires",
+        "Player can be drafted again"
+      ],
+      "correct": 2,
+      "explanation": "If a drafted player retires without playing in the NBA, the team's exclusive rights to that player are typically lost.",
+      "category": "draft",
+      "difficulty": "hard",
+      "source": "Article X, Section 4"
+    }
+  ]
+}

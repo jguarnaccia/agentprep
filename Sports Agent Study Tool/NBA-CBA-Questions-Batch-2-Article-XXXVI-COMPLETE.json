@@ -1,0 +1,454 @@
+{
+  "metadata": {
+    "title": "NBA CBA Study Materials - Batch 2: Article XXXVI - Player Agents",
+    "version": "2023 CBA  + NBAPA Regulations",
+    "batch": 2,
+    "article": "Article XXXVI",
+    "totalQuestions": 30,
+    "createdDate": "2025-10-06",
+    "importance": "CRITICAL - Core exam content for NBAPA certification",
+    "difficulty": {
+      "easy": 10,
+      "medium": 12,
+      "hard": 8
+    }
+  },
+  "studyNote": "Article XXXVI is one of the MOST IMPORTANT articles for aspiring agents. Combined with NBAPA Regulations Governing Player Agents, this forms the core of what you need to know to become a certified agent.",
+  "questions": [
+    {
+      "id": "art36-q001",
+      "question": "What is the maximum fee an NBAPA certified agent can charge for negotiating a player's NBA contract?",
+      "options": ["2%", "3%", "4%", "5%"],
+      "correct": 2,
+      "explanation": "NBAPA regulations specify a maximum agent fee of 4% of the player's compensation. This is one of the key regulations agents must know and is strictly enforced.",
+      "category": "agent-regulations",
+      "difficulty": "easy",
+      "source": "NBAPA Regulations, Section 3(B)"
+    },
+    {
+      "id": "art36-q002",
+      "question": "Can active NBA players serve as certified agents for other NBA players?",
+      "options": [
+        "Yes, with no restrictions",
+        "Yes, but only for players on other teams",
+        "No, active players are prohibited from being agents",
+        "Yes, but only with NBPA approval"
+      ],
+      "correct": 2,
+      "explanation": "Article XXXVI, Section 3 explicitly prohibits active NBA players from serving as agents for other players. This is to prevent conflicts of interest.",
+      "category": "agent-regulations",
+      "difficulty": "easy",
+      "source": "Article XXXVI, Section 3"
+    },
+    {
+      "id": "art36-q003",
+      "question": "Who must approve all player contracts before they become valid?",
+      "options": [
+        "Only the team",
+        "Only the NBPA",
+        "The NBA Commissioner",
+        "Both the team and player only"
+      ],
+      "correct": 2,
+      "explanation": "Article XXXVI, Section 1 states that all player contracts must be approved by the NBA Commissioner before they become effective.",
+      "category": "agent-regulations",
+      "difficulty": "easy",
+      "source": "Article XXXVI, Section 1"
+    },
+    {
+      "id": "art36-q004",
+      "question": "What lists must certified agents appear on to represent NBA players?",
+      "options": [
+        "Only the NBPA certified agent list",
+        "Only state bar association lists",
+        "The NBPA certified agent list maintained by the Players Association",
+        "No specific list required"
+      ],
+      "correct": 2,
+      "explanation": "Article XXXVI, Section 5 requires that agents must be on the official NBPA Agent List to represent players in contract negotiations.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "Article XXXVI, Section 5"
+    },
+    {
+      "id": "art36-q005",
+      "question": "What must the Players Association do before an agent can represent players?",
+      "options": [
+        "Nothing, agents self-certify",
+        "Confirm the agent's certification and maintain them on the certified agent list",
+        "Only conduct a background check",
+        "Only verify educational credentials"
+      ],
+      "correct": 1,
+      "explanation": "Article XXXVI, Section 6 requires the Players Association to confirm agent certification and maintain certified agents on the official list.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "Article XXXVI, Section 6"
+    },
+    {
+      "id": "art36-q006",
+      "question": "If an agent violates NBAPA regulations, what can happen?",
+      "options": [
+        "Nothing, regulations are just guidelines",
+        "Only a written warning",
+        "Fines, suspension, or decertification",
+        "Automatic lifetime ban"
+      ],
+      "correct": 2,
+      "explanation": "Article XXXVI, Section 2 and NBAPA Regulations provide for fines, suspension, and/or decertification for agents who violate regulations.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "Article XXXVI, Section 2"
+    },
+    {
+      "id": "art36-q007",
+      "question": "Are agents required to comply with NBPA regulations governing player agents?",
+      "options": [
+        "No, they are optional",
+        "Yes, compliance is mandatory",
+        "Only if the player requests it",
+        "Only for contracts over $1 million"
+      ],
+      "correct": 1,
+      "explanation": "Article XXXVI, Section 7 explicitly requires all agents to comply with NBPA Regulations Governing Player Agents.",
+      "category": "agent-regulations",
+      "difficulty": "easy",
+      "source": "Article XXXVI, Section 7"
+    },
+    {
+      "id": "art36-q008",
+      "question": "Can an agent charge a player an upfront fee before negotiating a contract?",
+      "options": [
+        "Yes, any amount",
+        "Yes, up to $5,000",
+        "No, fees can only be charged as a percentage of money actually received",
+        "Yes, but only for expenses"
+      ],
+      "correct": 2,
+      "explanation": "NBAPA regulations prohibit upfront fees. Agents can only charge fees as a percentage of compensation actually received by the player.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 3"
+    },
+    {
+      "id": "art36-q009",
+      "question": "What is the maximum term for an agent representation agreement with a player?",
+      "options": ["1 year", "2 years", "3 years", "4 years"],
+      "correct": 3,
+      "explanation": "NBAPA regulations limit representation agreements to a maximum of 4 years, protecting players from being locked into long-term agreements.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 2"
+    },
+    {
+      "id": "art36-q010",
+      "question": "Can an agent also represent a team in negotiations?",
+      "options": [
+        "Yes, if both parties consent",
+        "No, it's a clear conflict of interest and prohibited",
+        "Yes, but only in trades",
+        "Yes, for minimum salary contracts only"
+      ],
+      "correct": 1,
+      "explanation": "NBAPA regulations prohibit agents from simultaneously representing both a player and a team in the same negotiation due to inherent conflict of interest.",
+      "category": "agent-regulations",
+      "difficulty": "easy",
+      "source": "NBAPA Regulations, Section 3(C)"
+    },
+    {
+      "id": "art36-q011",
+      "question": "Must an agent provide a player with a copy of the NBPA regulations?",
+      "options": [
+        "No",
+        "Only if requested",
+        "Yes, it's required before signing a representation agreement",
+        "Only for rookie players"
+      ],
+      "correct": 2,
+      "explanation": "NBAPA regulations require agents to provide players with a copy of the regulations and explain key provisions before entering into a representation agreement.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 2"
+    },
+    {
+      "id": "art36-q012",
+      "question": "Can an agent pay a runner or street agent to recruit players?",
+      "options": [
+        "Yes, it's common practice",
+        "Yes, with NBPA approval",
+        "No, it's strictly prohibited",
+        "Yes, up to $1,000 per player"
+      ],
+      "correct": 2,
+      "explanation": "NBPA regulations strictly prohibit paying runners, street agents, or anyone else for player recruitment. This is considered a serious violation.",
+      "category": "agent-regulations",
+      "difficulty": "easy",
+      "source": "NBAPA Regulations, Section 3(C)"
+    },
+    {
+      "id": "art36-q013",
+      "question": "Can an agent charge fees for negotiating endorsement deals?",
+      "options": [
+        "No, only contract negotiations",
+        "Yes, but limited to 4% like contract fees",
+        "Yes, typically higher percentages (10-20%) are allowed for endorsements",
+        "Yes, any amount"
+      ],
+      "correct": 2,
+      "explanation": "The 4% maximum fee applies ONLY to NBA contract negotiations. For marketing/endorsement deals, agents typically charge 10-20% which is standard in the industry.",
+      "category": "agent-regulations",
+      "difficulty": "hard",
+      "source": "NBAPA Regulations, Section 3(B)"
+    },
+    {
+      "id": "art36-q014",
+      "question": "What educational/professional requirement must an agent meet?",
+      "options": [
+        "Must be a licensed attorney",
+        "Must have a bachelor's degree or equivalent professional experience",
+        "Must be a CPA",
+        "No specific requirement"
+      ],
+      "correct": 1,
+      "explanation": "NBAPA certification requires either a bachelor's degree from an accredited university or significant equivalent professional experience in sports representation.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 2(A)"
+    },
+    {
+      "id": "art36-q015",
+      "question": "Must agents pass an examination to become certified?",
+      "options": [
+        "No examination required",
+        "Only for first-time applicants",
+        "Yes, all applicants must pass the NBPA agent exam",
+        "Only if they're not attorneys"
+      ],
+      "correct": 2,
+      "explanation": "All applicants for NBPA agent certification must pass a comprehensive examination covering the CBA, regulations, and related topics.",
+      "category": "agent-regulations",
+      "difficulty": "easy",
+      "source": "NBAPA Regulations, Section 2(B)"
+    },
+    {
+      "id": "art36-q016",
+      "question": "How long is an agent certification valid before renewal is required?",
+      "options": ["1 year", "2 years", "3 years", "5 years"],
+      "correct": 2,
+      "explanation": "NBPA agent certification must be renewed every 3 years, requiring updated applications and continued education.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 2"
+    },
+    {
+      "id": "art36-q017",
+      "question": "Can an agent loan money to a client player?",
+      "options": [
+        "Yes, any amount",
+        "Yes, but not before signing",
+        "Generally prohibited, with very limited exceptions",
+        "Yes, up to $50,000"
+      ],
+      "correct": 2,
+      "explanation": "NBPA regulations generally prohibit agents from loaning money to players (or prospective players) as it creates conflicts of interest and potential for exploitation.",
+      "category": "agent-regulations",
+      "difficulty": "hard",
+      "source": "NBAPA Regulations, Section 3(C)"
+    },
+    {
+      "id": "art36-q018",
+      "question": "What happens if a player terminates an agent during the contract year?",
+      "options": [
+        "Agent gets full 4% fee regardless",
+        "Agent may be entitled to fees for work already performed on that contract",
+        "Agent gets nothing",
+        "Agent can sue for breach"
+      ],
+      "correct": 1,
+      "explanation": "NBPA regulations protect agents who have performed substantial work on a contract before termination, allowing them to recover fees for that work.",
+      "category": "agent-regulations",
+      "difficulty": "hard",
+      "source": "NBAPA Regulations, Section 4"
+    },
+    {
+      "id": "art36-q019",
+      "question": "Must representation agreements be in writing?",
+      "options": [
+        "No, oral agreements are valid",
+        "Yes, must be in writing and signed by both parties",
+        "Only for contracts over $1M",
+        "Writing preferred but not required"
+      ],
+      "correct": 1,
+      "explanation": "NBPA regulations require all representation agreements to be in writing and signed by both the player and agent, with a copy provided to the NBPA.",
+      "category": "agent-regulations",
+      "difficulty": "easy",
+      "source": "NBAPA Regulations, Section 2(A)"
+    },
+    {
+      "id": "art36-q020",
+      "question": "Can an agent represent both a player and that player's family member who is also in the NBA?",
+      "options": [
+        "No, always prohibited",
+        "Yes, with written consent disclosing potential conflicts",
+        "Yes, no restrictions",
+        "Only if they play for different teams"
+      ],
+      "correct": 1,
+      "explanation": "Agents can represent family members, but must fully disclose any potential conflicts of interest in writing and obtain informed consent from both players.",
+      "category": "agent-regulations",
+      "difficulty": "hard",
+      "source": "NBAPA Regulations, Section 3"
+    },
+    {
+      "id": "art36-q021",
+      "question": "What disclosure must an agent make about fees in the representation agreement?",
+      "options": [
+        "No disclosure required",
+        "Only total amount",
+        "Must specify the fee percentage and when fees are earned",
+        "Only if player asks"
+      ],
+      "correct": 2,
+      "explanation": "Representation agreements must clearly disclose the fee structure, including the percentage charged and the circumstances under which fees are earned.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 2"
+    },
+    {
+      "id": "art36-q022",
+      "question": "Can an agent provide gifts or benefits to college players before they declare for the draft?",
+      "options": [
+        "Yes, any amount",
+        "Yes, under $1,000",
+        "No, this violates NCAA rules and NBPA regulations",
+        "Yes, if disclosed"
+      ],
+      "correct": 2,
+      "explanation": "Providing gifts or benefits to college players violates both NCAA eligibility rules and NBPA regulations, and can result in agent decertification.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 3(C)"
+    },
+    {
+      "id": "art36-q023",
+      "question": "What fiduciary duty does an agent owe to their player-client?",
+      "options": [
+        "No specific duty",
+        "Only duty of competence",
+        "Complete fiduciary duty to act in player's best interest",
+        "Only duty to get highest salary"
+      ],
+      "correct": 2,
+      "explanation": "Agents owe a complete fiduciary duty to their player-clients, requiring them to always act in the player's best interest and avoid conflicts of interest.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, General Principles"
+    },
+    {
+      "id": "art36-q024",
+      "question": "If an agent believes they were wrongfully decertified, what recourse do they have?",
+      "options": [
+        "None, decision is final",
+        "Can appeal to federal court only",
+        "Can appeal to NBPA Committee on Agent Regulation",
+        "Can only reapply next year"
+      ],
+      "correct": 2,
+      "explanation": "Agents have the right to appeal decertification decisions to the NBPA Committee on Agent Regulation, which provides due process.",
+      "category": "agent-regulations",
+      "difficulty": "hard",
+      "source": "NBAPA Regulations, Section 6"
+    },
+    {
+      "id": "art36-q025",
+      "question": "Can foreign agents represent NBA players without NBPA certification?",
+      "options": [
+        "Yes, if licensed in their country",
+        "No, all agents representing NBA players must be NBPA certified",
+        "Yes, for international contracts only",
+        "Yes, with team approval"
+      ],
+      "correct": 1,
+      "explanation": "Regardless of location or foreign licensure, ANY agent representing a player in NBA contract negotiations must be NBPA certified.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 1"
+    },
+    {
+      "id": "art36-q026",
+      "question": "What must an agent do if there's a material change in their circumstances (criminal charge, bankruptcy, etc.)?",
+      "options": [
+        "Nothing required",
+        "Inform players only",
+        "Immediately notify the NBPA in writing",
+        "Report at next renewal"
+      ],
+      "correct": 2,
+      "explanation": "Agents must immediately notify the NBPA in writing of any material changes including criminal charges, civil judgments, bankruptcy, or other significant events.",
+      "category": "agent-regulations",
+      "difficulty": "hard",
+      "source": "NBAPA Regulations, Section 5"
+    },
+    {
+      "id": "art36-q027",
+      "question": "Can an agent own equity in a team for which they represent players?",
+      "options": [
+        "Yes, with no restrictions",
+        "Yes, up to 5%",
+        "No, this is a prohibited conflict of interest",
+        "Yes, if disclosed to players"
+      ],
+      "correct": 2,
+      "explanation": "Agents are prohibited from having any ownership interest in NBA teams, as this creates an insurmountable conflict of interest.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 3(C)"
+    },
+    {
+      "id": "art36-q028",
+      "question": "What records must an agent maintain regarding their client relationships?",
+      "options": [
+        "No specific requirements",
+        "Only contracts",
+        "Detailed records of all transactions and communications for at least 3 years",
+        "Only fee statements"
+      ],
+      "correct": 2,
+      "explanation": "NBPA regulations require agents to maintain detailed records of all transactions, contracts, and significant communications with clients for at least 3 years.",
+      "category": "agent-regulations",
+      "difficulty": "hard",
+      "source": "NBAPA Regulations, Section 5"
+    },
+    {
+      "id": "art36-q029",
+      "question": "Can an agent charge a player for 'marketing services' separate from their 4% contract fee?",
+      "options": [
+        "Yes, agents typically charge separately for marketing/endorsement work",
+        "No, the 4% covers everything",
+        "Only with written NBPA approval",
+        "Only for All-Star players"
+      ],
+      "correct": 0,
+      "explanation": "The 4% maximum applies ONLY to NBA contract negotiations. Agents can and do charge separate fees (typically 10-20%) for marketing, endorsements, and appearance deals.",
+      "category": "agent-regulations",
+      "difficulty": "hard",
+      "source": "NBAPA Regulations, Section 3(B)"
+    },
+    {
+      "id": "art36-q030",
+      "question": "What happens if an agent knowingly makes a false statement on their certification application?",
+      "options": [
+        "Minor fine only",
+        "Automatic denial or revocation of certification",
+        "Written warning",
+        "Nothing if not discovered"
+      ],
+      "correct": 1,
+      "explanation": "False statements on certification applications are grounds for immediate denial of new applications or revocation of existing certification, as honesty is fundamental to agent certification.",
+      "category": "agent-regulations",
+      "difficulty": "medium",
+      "source": "NBAPA Regulations, Section 2 & 6"
+    }
+  ]
+}

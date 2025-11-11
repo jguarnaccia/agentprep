@@ -1,0 +1,38 @@
+🏀 AGENTPREP - 100 SCENARIO QUESTIONS IMPORT GUIDE
+
+📁 YOUR SQL FILE LOCATION:
+/Users/jeremiahg/Desktop/agentprep/AgentPrep_100_Scenarios.sql
+
+🚀 IMPORT INSTRUCTIONS:
+
+1. Open the SQL file above in any text editor
+2. Select ALL content (Cmd+A) and Copy (Cmd+C)
+3. Go to: https://supabase.com/dashboard
+4. Select your AgentPrep project
+5. Click "SQL Editor" → "New Query"
+6. Paste the SQL content (Cmd+V)
+7. Click "Run" button
+8. ✅ All 100 scenarios will be imported!
+
+📊 WHAT YOU GET:
+- 100 expert-level scenario questions
+- 6 categories: Salary Cap, Trade Mechanics, Contract Structures, Free Agency, Luxury Tax & Aprons, Agent Regulations  
+- 4 difficulty levels: Easy, Medium, Hard, Expert
+- Immediately available on your /scenarios page
+
+🔍 VERIFY IMPORT:
+After running the SQL, execute this query to verify:
+SELECT COUNT(*) FROM questions WHERE question_type = 'scenario';
+
+Should show 190+ total scenarios (your existing + 100 new ones)
+
+🚀 DEPLOY YOUR SITE:
+Once scenarios are imported:
+1. cd /Users/jeremiahg/Desktop/agentprep
+2. npm i -g vercel
+3. vercel
+4. vercel --prod
+
+Your live site: https://agentprep-[username].vercel.app
+
+🎉 Your NBA agent study platform will be live with 100+ expert scenario questions!

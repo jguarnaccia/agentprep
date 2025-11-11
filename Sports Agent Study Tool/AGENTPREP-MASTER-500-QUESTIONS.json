@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "title": "AgentPrep - Complete NBA CBA Study Question Bank",
+    "description": "Comprehensive 500-question study bank covering all critical aspects of the NBA Collective Bargaining Agreement for NBPA agent certification preparation",
+    "version": "1.0",
+    "totalQuestions": 500,
+    "createdDate": "2025-10-07",
+    "batches": 17,
+    "coverage": [
+      "Article VII - Salary Cap & BRI (80 questions across 2 batches)",
+      "Article XXXVI - Player Agents (30 questions)",
+      "Article X - Draft Eligibility (30 questions)",
+      "Article XI - Free Agency (40 questions)",
+      "Article VIII - Rookie Scale (25 questions)",
+      "Article II - Player Contracts (50 questions)",
+      "Article XXXIII - Anti-Drug Program (40 questions)",
+      "Article VI - Player Conduct (25 questions)",
+      "Article IV - Player Benefits (30 questions)",
+      "Article XXII - Health & Wellness (20 questions)",
+      "Article XIV - Trading Contracts (30 questions)",
+      "Article XV - Grievance & Arbitration (25 questions)",
+      "Article XII - Contract Termination (25 questions)",
+      "Article XIII - Assignments (20 questions)",
+      "Article XX - Player Appearances (15 questions)",
+      "Article XXV - All-Star Game (15 questions)"
+    ],
+    "difficulty": {
+      "easy": 166,
+      "medium": 248,
+      "hard": 86
+    },
+    "studyNote": "This comprehensive question bank covers every essential aspect of the NBA CBA that agents need to master for certification. Study systematically by article/topic, then use randomized practice to simulate exam conditions."
+  },
+  "batchSources": [
+    "NBA-CBA-Questions-Batch-1-Article-VII-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-2-Article-XXXVI-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-3-Article-X-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-4-Article-XI-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-5-Article-VIII-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-6-Article-II-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-7-Article-XXXIII-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-8-Article-VI-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-9-Article-IV-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-10-Article-XXII-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-11-Article-XIV-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-12-Article-VII-Part-2-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-13-Article-XV-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-14-Article-XII-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-15-Article-XIII-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-16-Article-XX-COMPLETE.json",
+    "NBA-CBA-Questions-Batch-17-Article-XXV-COMPLETE.json"
+  ],
+  "instructions": "All 500 questions from the 17 individual batch files have been consolidated here for easy import into the web application. Each question includes: ID, question text, 4 multiple choice options, correct answer index, detailed explanation, category, difficulty level, and CBA source citation."
+}
