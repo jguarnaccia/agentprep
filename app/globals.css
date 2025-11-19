@@ -1,19 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a202c;
-  /* Patriotic Red, White, Blue Color Palette */
-  --red-primary: #dc2626;
-  --red-secondary: #ef4444;
-  --red-light: #fef2f2;
-  --blue-primary: #1d4ed8;
-  --blue-secondary: #3b82f6;
-  --blue-light: #eff6ff;
-  --white: #ffffff;
-  --gray-dark: #1f2937;
-  --gray-medium: #6b7280;
-  --gray-light: #f8fafc;
+  /* AgentPrep Brand Colors - Professional Sports Theme */
+  --background: #FFFFFF;
+  --foreground: #0B0C10;
+  
+  /* Primary Colors - Black */
+  --black-primary: #0B0C10;
+  --black-secondary: #111317;
+  --black-tertiary: #16181D;
+  
+  /* Accent Colors - Red */
+  --red-primary: #DC2626;
+  --red-dark: #991B1B;
+  --red-light: #FEE2E2;
+  
+  /* Accent Colors - Blue */
+  --blue-primary: #2563EB;
+  --blue-dark: #1E40AF;
+  --blue-light: #DBEAFE;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --gray-light: #F3F4F6;
+  --gray-medium: #9CA3AF;
+  --gray-dark: #1F2937;
+  
+  /* Status Colors */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #DC2626;
+  
+  /* Legacy support */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F3F4F6;
+  --bg-tertiary: #E5E7EB;
+  --blue-neon: #2563EB;
+  --text-primary: #0B0C10;
+  --text-secondary: #4B5563;
+  --border-color: #E5E7EB;
 }
 
 @theme inline {
@@ -23,20 +48,75 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a202c;
-    --foreground: #ffffff;
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111317;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2937;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* Prevent layout shift */
+* {
+  box-sizing: border-box;
+}
+
+/* Animation for pulse glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* 3D Flip Animation Styles for Flashcards */
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(17, 19, 23, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(31, 41, 55, 0.5);
+}
+
+.glass-light {
+  background: rgba(17, 19, 23, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(31, 41, 55, 0.3);
+}
+
+/* Neon glow effect */
+.neon-glow {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.neon-glow-strong {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+}
+
+/* 3D Perspective for Flashcard Flips */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
 .preserve-3d {
   transform-style: preserve-3d;
 }
@@ -49,85 +129,19 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Smooth transitions for better UX */
-.card-transition {
-  transition: transform 0.5s ease-in-out;
+/* Hide Scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Custom scrollbar for filters */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-/* Enhanced focus states for accessibility - Red/Blue Theme */
-button:focus-visible,
-input:focus-visible,
-select:focus-visible {
-  outline: 2px solid var(--blue-primary);
-  outline-offset: 2px;
-}
-
-/* Patriotic gradient backgrounds */
-.bg-patriotic-primary {
-  background: linear-gradient(135deg, var(--blue-primary) 0%, var(--red-primary) 100%);
-}
-
-.bg-patriotic-secondary {
-  background: linear-gradient(135deg, var(--red-secondary) 0%, var(--blue-secondary) 100%);
-}
-
-.bg-patriotic-reverse {
-  background: linear-gradient(135deg, var(--red-primary) 0%, var(--blue-primary) 100%);
-}
-
-/* Star pattern overlay for extra patriotic flair */
-.stars-overlay {
-  background-image: radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
-                    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
-                    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.3), transparent),
-                    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.2), transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-}
-
-/* Smooth hover transitions */
-.hover-lift:hover {
-  transform: translateY(-2px);
-}
-
-/* Loading animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-/* Card shadow effects */
-.card-shadow {
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.card-shadow:hover {
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
