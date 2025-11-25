@@ -38,6 +38,18 @@ export function useDashboardData() {
   const [recentActivity, setRecentActivity] = useState<RecentActivity[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+
+  // Refresh data when window regains focus (when user returns from study page)
+  useEffect(() => {
+    const handleFocus = () => {
+      console.log('Window focused - refreshing dashboard data');
+      setRefreshTrigger(prev => prev + 1);
+    };
+    
+    window.addEventListener('focus', handleFocus);
+    return () => window.removeEventListener('focus', handleFocus);
+  }, []);
 
   useEffect(() => {
     async function fetchDashboardData() {
@@ -49,6 +61,8 @@ export function useDashboardData() {
       try {
         setLoading(true);
         setError(null);
+        
+        console.log('Fetching dashboard data...');
 
         // Fetch all data in parallel
         const [
@@ -58,11 +72,12 @@ export function useDashboardData() {
           notesData,
           scenariosData,
         ] = await Promise.all([
-          // User progress (questions)
+          // User progress (questions) - ORDER BY MOST RECENT!
           supabase
             .from('user_progress')
             .select('*')
-            .eq('user_id', user.id),
+            .eq('user_id', user.id)
+            .order('last_attempted', { ascending: false }),
           
           // Flashcard progress
           supabase
@@ -90,10 +105,12 @@ export function useDashboardData() {
             .eq('user_id', user.id),
         ]);
 
-        // Calculate question stats
-        const totalQuestions = progressData.data?.length || 0;
-        const correctQuestions = progressData.data?.filter(q => q.is_correct)?.length || 0;
-        const incorrectQuestions = totalQuestions - correctQuestions;
+        // Calculate question stats - COUNT TOTAL ATTEMPTS NOT ROWS!
+        const totalAttempts = progressData.data?.reduce((sum, q) => {
+          return sum + (q.correct_count || 0) + (q.incorrect_count || 0);
+        }, 0) || 0;
+        const correctAttempts = progressData.data?.reduce((sum, q) => sum + (q.correct_count || 0), 0) || 0;
+        const incorrectAttempts = progressData.data?.reduce((sum, q) => sum + (q.incorrect_count || 0), 0) || 0;
 
         // Calculate mastery breakdown
         const masteryBreakdown = {
@@ -121,9 +138,9 @@ export function useDashboardData() {
 
         // Set stats
         setStats({
-          questionsAnswered: totalQuestions,
-          questionsCorrect: correctQuestions,
-          questionsIncorrect: incorrectQuestions,
+          questionsAnswered: totalAttempts,
+          questionsCorrect: correctAttempts,
+          questionsIncorrect: incorrectAttempts,
           flashcardsReviewed: totalFlashcards,
           flashcardsMastered: masteredFlashcards,
           testsCompleted: totalTests,
@@ -154,7 +171,7 @@ export function useDashboardData() {
     }
 
     fetchDashboardData();
-  }, [user]);
+  }, [user, refreshTrigger]); // Add refreshTrigger to dependencies
 
   return { stats, recentActivity, loading, error };
 }
@@ -224,65 +241,77 @@ function buildRecentActivity(
 ): RecentActivity[] {
   const activities: RecentActivity[] = [];
 
-  // Add question activities
+  // Add question activities (use correct_count to determine if mostly correct)
   progress.slice(0, 5).forEach(item => {
+    const totalAttempts = (item.correct_count || 0) + (item.incorrect_count || 0);
+    const isCorrect = (item.correct_count || 0) > (item.incorrect_count || 0);
+    
     activities.push({
       id: item.id,
       type: 'question',
-      description: item.is_correct 
-        ? 'Answered a question correctly' 
-        : 'Attempted a question',
+      description: totalAttempts > 0 
+        ? (isCorrect ? 'Answered questions correctly' : 'Attempted questions')
+        : 'Started a question',
       timestamp: new Date(item.last_attempted),
       metadata: item,
     });
   });
 
-  // Add flashcard activities
-  flashcards.slice(0, 5).forEach(item => {
-    activities.push({
-      id: item.id,
-      type: 'flashcard',
-      description: `Reviewed flashcard (confidence: ${item.confidence_level}/5)`,
-      timestamp: new Date(item.last_reviewed),
-      metadata: item,
+  // Add flashcard activities (if flashcard_progress exists)
+  if (flashcards && flashcards.length > 0) {
+    flashcards.slice(0, 5).forEach(item => {
+      activities.push({
+        id: item.id,
+        type: 'flashcard',
+        description: `Reviewed flashcard${item.confidence_level ? ` (confidence: ${item.confidence_level}/5)` : ''}`,
+        timestamp: new Date(item.last_reviewed || item.created_at),
+        metadata: item,
+      });
     });
-  });
+  }
 
   // Add test activities
-  tests.slice(0, 5).forEach(item => {
-    activities.push({
-      id: item.id,
-      type: 'test',
-      description: `Completed test - ${item.score}%`,
-      timestamp: new Date(item.completed_at),
-      metadata: item,
+  if (tests && tests.length > 0) {
+    tests.slice(0, 5).forEach(item => {
+      activities.push({
+        id: item.id,
+        type: 'test',
+        description: `Completed test - ${item.score || 0}%`,
+        timestamp: new Date(item.completed_at || item.created_at),
+        metadata: item,
+      });
     });
-  });
+  }
 
   // Add note activities
-  notes.slice(0, 3).forEach(item => {
-    activities.push({
-      id: item.id,
-      type: 'note',
-      description: `Created note: "${item.title}"`,
-      timestamp: new Date(item.created_at),
-      metadata: item,
+  if (notes && notes.length > 0) {
+    notes.slice(0, 3).forEach(item => {
+      activities.push({
+        id: item.id,
+        type: 'note',
+        description: `Created note${item.title ? `: "${item.title}"` : ''}`,
+        timestamp: new Date(item.created_at),
+        metadata: item,
+      });
     });
-  });
+  }
 
   // Add scenario activities
-  scenarios.slice(0, 3).forEach(item => {
-    activities.push({
-      id: item.id,
-      type: 'scenario',
-      description: 'Completed a scenario',
-      timestamp: new Date(item.completed_at),
-      metadata: item,
+  if (scenarios && scenarios.length > 0) {
+    scenarios.slice(0, 3).forEach(item => {
+      activities.push({
+        id: item.id,
+        type: 'scenario',
+        description: 'Completed a scenario',
+        timestamp: new Date(item.completed_at || item.created_at),
+        metadata: item,
+      });
     });
-  });
+  }
 
   // Sort by timestamp and return top 10
   return activities
+    .filter(a => a.timestamp && !isNaN(a.timestamp.getTime())) // Filter out invalid dates
     .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
     .slice(0, 10);
 }

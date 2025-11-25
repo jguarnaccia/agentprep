@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   BrainCircuit, 
@@ -15,15 +15,68 @@ import {
   TrendingUp,
   Loader2
 } from 'lucide-react';
-import { useScenarios, type Scenario } from '@/lib/hooks/useStudyData';
+import { useScenarios, type Scenario, useAuth } from '@/lib/hooks/useStudyData';
+import { supabase } from '@/lib/supabase';
 
 export function ScenariosSection() {
+  const { user } = useAuth();
   const { scenarios, loading, error } = useScenarios();
   const [selectedScenario, setSelectedScenario] = useState<Scenario | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [expandedTopics, setExpandedTopics] = useState<Set<string>>(new Set());
+  const [stats, setStats] = useState({ completed: 0, successRate: 0, avgTime: 0 });
+  const fetchStatsRef = useRef<(() => void) | null>(null);
+  const [startTime, setStartTime] = useState<number | null>(null);
+  const [completedScenarios, setCompletedScenarios] = useState<Set<string>>(new Set());
+
+  // Fetch scenario stats
+  useEffect(() => {
+    async function fetchStats() {
+      if (!user) return;
+      
+      try {
+        const result = await supabase
+          .from('scenarios_progress')
+          .select('*')
+          .eq('user_id', user.id);
+        
+        // If no data, show 0 stats
+        if (!result.data) {
+          setStats({ completed: 0, successRate: 0, avgTime: 0 });
+          return;
+        }
+        
+        // Store completed scenario IDs
+        const completedIds = new Set(result.data.map(s => s.scenario_id));
+        setCompletedScenarios(completedIds);
+        
+        const completed = result.data.length || 0;
+        const correctCount = result.data.filter(s => s.is_correct).length || 0;
+        const successRate = completed > 0 ? Math.round((correctCount / completed) * 100) : 0;
+        
+        // Calculate average time (if you have time_taken field)
+        const totalTime = result.data.reduce((sum, s) => sum + (s.time_taken || 0), 0) || 0;
+        const avgTime = completed > 0 ? Math.round(totalTime / completed) : 0;
+        
+        setStats({ 
+          completed, 
+          successRate, 
+          avgTime 
+        });
+      } catch (err) {
+        console.error('Error fetching scenario stats:', err);
+        // Fallback to 0 stats
+        setStats({ completed: 0, successRate: 0, avgTime: 0 });
+      }
+    }
+    
+    // Store reference for manual refresh
+    fetchStatsRef.current = fetchStats;
+    
+    fetchStats();
+  }, [user]);
 
   // Group scenarios by topic
   const scenariosByTopic = scenarios.reduce((acc, scenario) => {
@@ -54,10 +107,45 @@ export function ScenariosSection() {
     if (option) {
       setIsCorrect(option.isCorrect);
     }
+    
+    // Start timer on first answer selection
+    if (startTime === null) {
+      setStartTime(Date.now());
+    }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setShowExplanation(true);
+    
+    // Calculate time taken in seconds
+    const timeTaken = startTime ? Math.round((Date.now() - startTime) / 1000) : 0;
+    
+    // Save scenario progress to database
+    if (user && selectedScenario && isCorrect !== null) {
+      try {
+        const { error } = await supabase
+          .from('scenarios_progress')
+          .upsert({
+            user_id: user.id,
+            scenario_id: selectedScenario.id,
+            is_correct: isCorrect,
+            time_taken: timeTaken,
+            completed_at: new Date().toISOString()
+          }, {
+            onConflict: 'user_id,scenario_id' // Update if already exists
+          });
+        
+        if (error) {
+          console.error('Error saving scenario progress:', error);
+        } else {
+          console.log(`Scenario progress saved successfully - Time: ${timeTaken}s`);
+          // Refresh stats after saving
+          fetchStatsRef.current?.();
+        }
+      } catch (err) {
+        console.error('Error saving scenario progress:', err);
+      }
+    }
   };
 
   const handleNextScenario = () => {
@@ -65,6 +153,7 @@ export function ScenariosSection() {
     setSelectedAnswer(null);
     setShowExplanation(false);
     setIsCorrect(null);
+    setStartTime(null); // Reset timer
   };
 
   if (selectedScenario) {
@@ -314,8 +403,8 @@ export function ScenariosSection() {
               <span className="text-sm font-medium text-slate-300">Completed</span>
               <CheckCircle className="w-5 h-5 text-green-500" />
             </div>
-            <p className="text-3xl font-bold text-white">47</p>
-            <p className="text-xs text-slate-400 mt-1">Out of 190 scenarios</p>
+            <p className="text-3xl font-bold text-white">{stats.completed}</p>
+            <p className="text-xs text-slate-400 mt-1">Out of {scenarios.length} scenarios</p>
           </motion.div>
 
           <motion.div
@@ -328,8 +417,8 @@ export function ScenariosSection() {
               <span className="text-sm font-medium text-red-100">Success Rate</span>
               <TrendingUp className="w-5 h-5 text-white" />
             </div>
-            <p className="text-3xl font-bold text-white">78%</p>
-            <p className="text-xs text-red-100 mt-1">+5% this week</p>
+            <p className="text-3xl font-bold text-white">{stats.successRate}%</p>
+            <p className="text-xs text-red-100 mt-1">Overall accuracy</p>
           </motion.div>
 
           <motion.div
@@ -342,7 +431,7 @@ export function ScenariosSection() {
               <span className="text-sm font-medium text-blue-100">Avg Time</span>
               <Clock className="w-5 h-5 text-white" />
             </div>
-            <p className="text-3xl font-bold text-white">3:24</p>
+            <p className="text-3xl font-bold text-white">{Math.floor(stats.avgTime / 60)}:{(stats.avgTime % 60).toString().padStart(2, '0')}</p>
             <p className="text-xs text-blue-100 mt-1">Per scenario</p>
           </motion.div>
         </div>
@@ -413,45 +502,59 @@ export function ScenariosSection() {
                         className="border-t border-slate-700"
                       >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
-                          {topicScenarios.map((scenario, index) => (
-                            <motion.div
-                              key={scenario.id}
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: 0.05 * index }}
-                              className="bg-slate-800/50 rounded-xl border border-slate-600 overflow-hidden hover:shadow-lg hover:border-blue-500/50 transition-all group cursor-pointer"
-                              onClick={() => setSelectedScenario(scenario)}
-                            >
-                              <div className="p-5">
-                                <div className="flex items-center gap-2 mb-3">
-                                  <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${
-                                    scenario.difficulty === 'Beginner' 
-                                      ? 'bg-green-500/20 text-green-300 border border-green-500/30'
-                                      : scenario.difficulty === 'Intermediate'
-                                      ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                                      : 'bg-red-500/20 text-red-300 border border-red-500/30'
-                                  }`}>
-                                    {scenario.difficulty}
-                                  </span>
-                                </div>
-
-                                <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors line-clamp-1">
-                                  {scenario.title}
-                                </h4>
-                                <p className="text-sm text-slate-400 mb-4 line-clamp-2">
-                                  {scenario.description}
-                                </p>
-
-                                <div className="flex items-center justify-between">
-                                  <div className="flex items-center gap-2 text-sm text-slate-500">
-                                    <Target className="w-4 h-4" />
-                                    <span>Case Study</span>
+                          {topicScenarios.map((scenario, index) => {
+                            const isCompleted = completedScenarios.has(scenario.id);
+                            
+                            return (
+                              <motion.div
+                                key={scenario.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.05 * index }}
+                                className="bg-slate-800/50 rounded-xl border border-slate-600 overflow-hidden hover:shadow-lg hover:border-blue-500/50 transition-all group cursor-pointer relative"
+                                onClick={() => setSelectedScenario(scenario)}
+                              >
+                                {/* Completed Badge */}
+                                {isCompleted && (
+                                  <div className="absolute top-3 right-3 z-10">
+                                    <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-green-500 text-white text-xs font-semibold shadow-lg">
+                                      <CheckCircle className="w-3 h-3" />
+                                      <span>Completed</span>
+                                    </div>
                                   </div>
-                                  <ArrowRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 transition-transform" />
+                                )}
+                                
+                                <div className="p-5">
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${
+                                      scenario.difficulty === 'Beginner' 
+                                        ? 'bg-green-500/20 text-green-300 border border-green-500/30'
+                                        : scenario.difficulty === 'Intermediate'
+                                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                                        : 'bg-red-500/20 text-red-300 border border-red-500/30'
+                                    }`}>
+                                      {scenario.difficulty}
+                                    </span>
+                                  </div>
+
+                                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors line-clamp-1">
+                                    {scenario.title}
+                                  </h4>
+                                  <p className="text-sm text-slate-400 mb-4 line-clamp-2">
+                                    {scenario.description}
+                                  </p>
+
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-2 text-sm text-slate-500">
+                                      <Target className="w-4 h-4" />
+                                      <span>Case Study</span>
+                                    </div>
+                                    <ArrowRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 transition-transform" />
+                                  </div>
                                 </div>
-                              </div>
-                            </motion.div>
-                          ))}
+                              </motion.div>
+                            );
+                          })}
                         </div>
                       </motion.div>
                     )}

@@ -4,6 +4,8 @@ import { AppLayout } from '@/components/layout/AppLayout';
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
 import { useAuth } from '@/lib/hooks/useAuth';
 import { useDashboardData } from '@/lib/hooks/useDashboardData';
+import DueForReviewWidget from '@/components/dashboard/DueForReviewWidget';
+import AchievementsSection from '@/components/dashboard/AchievementsSection';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -211,6 +213,19 @@ export default function DashboardPage() {
                 </motion.div>
               ))}
             </div>
+
+            {/* SRS Due for Review Widget */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mb-8"
+            >
+              <DueForReviewWidget />
+            </motion.div>
+
+            {/* Achievements Section */}
+            <AchievementsSection />
 
             {/* Mastery Breakdown */}
             {stats && (stats.masteryBreakdown.new > 0 || stats.masteryBreakdown.mastered > 0) && (

@@ -3,6 +3,8 @@
 import { AppLayout } from '@/components/layout/AppLayout';
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
 import { useAuth } from '@/lib/hooks/useAuth';
+import { useAchievements } from '@/lib/hooks/useAchievements';
+import { AchievementsGrid } from '@/components/achievements/AchievementsGrid';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -17,11 +19,22 @@ import {
   Clock,
   Edit2,
   Save,
-  X
+  X,
+  Trophy
 } from 'lucide-react';
 
 export default function ProfilePage() {
   const { user } = useAuth();
+  const { 
+    allAchievements, 
+    unlockedAchievements, 
+    totalPoints,
+    unlockedCount,
+    totalCount,
+    completionPercentage,
+    loading: achievementsLoading 
+  } = useAchievements();
+  
   const [isEditing, setIsEditing] = useState(false);
   const [fullName, setFullName] = useState(user?.user_metadata?.full_name || '');
   const [loading, setLoading] = useState(false);
@@ -80,10 +93,10 @@ export default function ProfilePage() {
       color: 'from-purple-500 to-purple-600'
     },
     {
-      icon: <Award className="h-6 w-6" />,
-      label: 'Flashcards Mastered',
-      value: '0',
-      color: 'from-red-500 to-red-600'
+      icon: <Trophy className="h-6 w-6" />,
+      label: 'Achievement Points',
+      value: totalPoints.toLocaleString(),
+      color: 'from-yellow-500 to-yellow-600'
     }
   ];
 
@@ -277,30 +290,42 @@ export default function ProfilePage() {
                     </CardContent>
                   </Card>
                 </motion.div>
-
-                {/* Achievements */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <h3 className="text-xl font-bold text-white mb-4">Achievements</h3>
-                  <Card className="border-gray-800 bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-xl">
-                    <CardContent className="p-6">
-                      <div className="text-center py-12">
-                        <div className="inline-flex p-4 rounded-full bg-gray-800/50 mb-4">
-                          <Award className="h-8 w-8 text-gray-600" />
-                        </div>
-                        <p className="text-gray-400 mb-2">No achievements yet</p>
-                        <p className="text-sm text-gray-600">
-                          Complete your first study session to earn achievements
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
               </div>
             </div>
+
+            {/* 🏆 ACHIEVEMENTS SECTION - NEW! */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mt-8"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-3xl font-bold text-white mb-2">🏆 Achievements</h2>
+                  <p className="text-gray-400">
+                    {unlockedCount} of {totalCount} unlocked ({completionPercentage}% complete)
+                  </p>
+                </div>
+                <div className="text-right">
+                  <div className="text-3xl font-bold text-yellow-500">{totalPoints}</div>
+                  <div className="text-sm text-gray-400">Total Points</div>
+                </div>
+              </div>
+
+              {achievementsLoading ? (
+                <Card className="border-gray-800 bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-xl">
+                  <CardContent className="p-12 text-center">
+                    <p className="text-gray-400">Loading achievements...</p>
+                  </CardContent>
+                </Card>
+              ) : (
+                <AchievementsGrid
+                  allAchievements={allAchievements}
+                  unlockedAchievements={unlockedAchievements}
+                />
+              )}
+            </motion.div>
           </div>
         </div>
       </AppLayout>

@@ -421,7 +421,7 @@ export function useSmartQuestions(userId: string, filters?: {
 /**
  * Get priority question statistics for dashboard
  */
-export function usePriorityStats(userId: string) {
+export function usePriorityStats(userId: string, refreshKey?: number) {
   const [stats, setStats] = useState<{
     highPriorityCount: number;
     neverSeenCount: number;
@@ -436,13 +436,15 @@ export function usePriorityStats(userId: string) {
 
     async function fetchPriorityStats() {
       try {
+        setLoading(true);
+        
         // Fetch all questions
         const { data: questions, error: questionsError } = await supabase
           .from('questions')
           .select('*');
 
         if (questionsError) throw questionsError;
-
+        
         // Fetch user progress
         const { data: progress, error: progressError } = await supabase
           .from('user_progress')
@@ -450,9 +452,10 @@ export function usePriorityStats(userId: string) {
           .eq('user_id', userId);
 
         if (progressError) throw progressError;
-
+        
         // Calculate statistics
-        const progressMap = new Map((progress || []).map(p => [p.question_id, p]));
+        // IMPORTANT: Convert question_id to string for comparison since they're stored as TEXT in DB
+        const progressMap = new Map((progress || []).map(p => [String(p.question_id), p]));
         const categoryAccuracy = calculateCategoryAccuracy(progress || [], questions || []);
 
         let highPriorityCount = 0;
@@ -460,7 +463,7 @@ export function usePriorityStats(userId: string) {
         let needsReviewCount = 0;
 
         (questions || []).forEach(question => {
-          const questionProgress = progressMap.get(question.id);
+          const questionProgress = progressMap.get(String(question.id)); // Convert to string for lookup
           const priorityScore = calculateQuestionPriority(
             question,
             questionProgress || null,
@@ -474,7 +477,7 @@ export function usePriorityStats(userId: string) {
             needsReviewCount++;
           }
         });
-
+        
         // Find weak topics (< 70% accuracy)
         const weakTopics = Object.entries(categoryAccuracy)
           .filter(([_, stats]) => stats.total >= 3) // At least 3 attempts
@@ -502,7 +505,7 @@ export function usePriorityStats(userId: string) {
     }
 
     fetchPriorityStats();
-  }, [userId]);
+  }, [userId, refreshKey]);
 
   return { stats, loading, error };
 }
@@ -615,7 +618,7 @@ export function useUserProgress(userId: string) {
 }
 
 /**
- * NEW: Get questions due for review using SRS
+ * NEW: Get questions due for review using SRS + fallback logic
  */
 export function useDueQuestions(userId: string) {
   const [dueQuestions, setDueQuestions] = useState<(Question & { progress: UserProgress })[]>([]);
@@ -623,47 +626,157 @@ export function useDueQuestions(userId: string) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!userId) return;
+    if (!userId) {
+      setLoading(false);
+      return;
+    }
 
     async function fetchDueQuestions() {
       try {
-        const now = new Date().toISOString();
+        console.log('Fetching due questions for user:', userId);
+        const now = new Date();
+        const threeDaysAgo = new Date(now.getTime() - (3 * 24 * 60 * 60 * 1000));
         
-        const { data, error } = await supabase
+        // Get ALL progress records for this user
+        const { data: progressData, error: progressError } = await supabase
           .from('user_progress')
-          .select(`
-            *,
-            questions:question_id (*)
-          `)
-          .eq('user_id', userId)
-          .lte('next_review_date', now)
-          .order('next_review_date', { ascending: true });
+          .select('*')
+          .eq('user_id', userId);
 
-        if (error) throw error;
-        
-        // Transform data to include question details
-        const transformed = (data || []).map((item: any) => ({
-          ...item.questions,
-          progress: {
-            id: item.id,
-            user_id: item.user_id,
-            question_id: item.question_id,
-            correct_count: item.correct_count,
-            incorrect_count: item.incorrect_count,
-            last_attempted: item.last_attempted,
-            mastery_level: item.mastery_level,
-            next_review_date: item.next_review_date,
-            ease_factor: item.ease_factor,
-            interval_days: item.interval_days,
-            consecutive_correct: item.consecutive_correct,
-            last_review_date: item.last_review_date,
+        if (progressError) {
+          console.error('Error fetching progress:', progressError);
+          throw progressError;
+        }
+
+        console.log(`Found ${progressData?.length || 0} total progress records`);
+        console.log('Sample progress records:', progressData?.slice(0, 3));
+
+        if (!progressData || progressData.length === 0) {
+          console.log('No progress data found, returning empty array');
+          setDueQuestions([]);
+          return;
+        }
+
+        // Filter for questions that need review based on multiple criteria:
+        const dueProgressRecords = progressData.filter((p, index) => {
+          let matched = false;
+          let matchedCriteria: string[] = [];
+          
+          // Criterion 1: Has next_review_date and it's in the past
+          if (p.next_review_date) {
+            const reviewDate = new Date(p.next_review_date);
+            if (reviewDate <= now) {
+              matched = true;
+              matchedCriteria.push(`SRS (next_review: ${reviewDate.toISOString()})`);
+            }
           }
-        }));
+          
+          // Criterion 2: More incorrect than correct attempts (needs practice)
+          if (p.incorrect_count > p.correct_count) {
+            matched = true;
+            matchedCriteria.push(`Performance (${p.incorrect_count} incorrect > ${p.correct_count} correct)`);
+          }
+          
+          // Criterion 3: Not attempted in last 3 days and has at least one attempt
+          if (p.last_attempted) {
+            const lastAttempt = new Date(p.last_attempted);
+            const totalAttempts = (p.correct_count || 0) + (p.incorrect_count || 0);
+            if (lastAttempt < threeDaysAgo && totalAttempts > 0) {
+              matched = true;
+              matchedCriteria.push(`Time-based (last: ${lastAttempt.toISOString()})`);
+            }
+          }
+          
+          // Log first 3 matches for debugging
+          if (matched && index < 3) {
+            console.log(`✓ Question ${p.question_id} matched:`, matchedCriteria.join(', '));
+          }
+          
+          return matched;
+        });
 
-        setDueQuestions(transformed);
+        console.log(`Filtered to ${dueProgressRecords.length} due progress records`);
+        
+        if (dueProgressRecords.length === 0) {
+          console.log('⚠️ NO QUESTIONS MATCHED ANY CRITERIA');
+          console.log('Sample of unmatched progress (first 3):');
+          progressData.slice(0, 3).forEach(p => {
+            console.log({
+              question_id: p.question_id,
+              next_review_date: p.next_review_date,
+              correct_count: p.correct_count,
+              incorrect_count: p.incorrect_count,
+              last_attempted: p.last_attempted,
+            });
+          });
+        }
+
+        if (dueProgressRecords.length === 0) {
+          setDueQuestions([]);
+          return;
+        }
+
+        // Extract question IDs and convert to strings (questions.id is TEXT type)
+        const questionIds = dueProgressRecords.map(p => String(p.question_id));
+        console.log('Fetching questions with IDs (as strings):', questionIds.slice(0, 5), '...');
+
+        // Fetch the corresponding questions
+        const { data: questionsData, error: questionsError } = await supabase
+          .from('questions')
+          .select('*')
+          .in('id', questionIds);
+
+        if (questionsError) {
+          console.error('Error fetching questions:', questionsError);
+          throw questionsError;
+        }
+
+        console.log(`Found ${questionsData?.length || 0} questions`);
+
+        // Create a map for quick lookup (ensure both keys are strings)
+        const questionsMap = new Map(
+          (questionsData || []).map(q => [String(q.id), q])
+        );
+
+        // Combine progress and question data
+        const combined = dueProgressRecords
+          .map(progressItem => {
+            const question = questionsMap.get(String(progressItem.question_id));
+            if (!question) {
+              console.warn(`Question not found for ID: ${progressItem.question_id}`);
+              return null;
+            }
+
+            return {
+              ...question,
+              progress: {
+                id: progressItem.id,
+                user_id: progressItem.user_id,
+                question_id: progressItem.question_id,
+                correct_count: progressItem.correct_count,
+                incorrect_count: progressItem.incorrect_count,
+                last_attempted: progressItem.last_attempted,
+                mastery_level: progressItem.mastery_level,
+                next_review_date: progressItem.next_review_date,
+                ease_factor: progressItem.ease_factor,
+                interval_days: progressItem.interval_days,
+                consecutive_correct: progressItem.consecutive_correct,
+                last_review_date: progressItem.last_review_date,
+              }
+            };
+          })
+          .filter(Boolean) as (Question & { progress: UserProgress })[];
+
+        console.log(`Successfully combined ${combined.length} questions with progress`);
+        setDueQuestions(combined);
       } catch (err: any) {
-        setError(err.message);
-        console.error('Error fetching due questions:', err);
+        const errorMessage = err?.message || err?.toString() || 'Unknown error fetching due questions';
+        setError(errorMessage);
+        console.error('Error fetching due questions:', {
+          error: err,
+          message: errorMessage,
+          stack: err?.stack
+        });
       } finally {
         setLoading(false);
       }
@@ -952,6 +1065,7 @@ export async function updateFlashcardProgress(
 
 /**
  * NEW: Get comprehensive SRS statistics for dashboard
+ * CALCULATES stats directly from user_progress and flashcard_progress tables
  */
 export function useSRSStats(userId: string) {
   const [stats, setStats] = useState<SRSStats | null>(null);
@@ -959,21 +1073,167 @@ export function useSRSStats(userId: string) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!userId) return;
+    if (!userId) {
+      setLoading(false);
+      return;
+    }
 
     async function fetchStats() {
       try {
-        const { data, error } = await supabase
-          .from('user_srs_stats')
-          .select('*')
-          .eq('user_id', userId)
-          .single();
+        console.log('[useSRSStats] Calculating SRS stats for user:', userId);
+        const now = new Date();
+        const oneDayFromNow = new Date(now.getTime() + (24 * 60 * 60 * 1000));
 
-        if (error) throw error;
-        setStats(data);
+        // Fetch all progress data in parallel
+        const [
+          { data: questionProgress, error: qError },
+          { data: flashcardProgress, error: fError }
+        ] = await Promise.all([
+          supabase
+            .from('user_progress')
+            .select('*')
+            .eq('user_id', userId),
+          supabase
+            .from('flashcard_progress')
+            .select('*')
+            .eq('user_id', userId)
+        ]);
+
+        if (qError) throw qError;
+        if (fError) throw fError;
+
+        console.log('[useSRSStats] Found:', {
+          questionProgress: questionProgress?.length || 0,
+          flashcardProgress: flashcardProgress?.length || 0
+        });
+
+        // Calculate question stats
+        let questions_due = 0;
+        let questions_due_soon = 0;
+        let new_questions = 0;
+        let learning_questions = 0;
+        let reviewing_questions = 0;
+        let mastered_questions = 0;
+        let total_question_ease = 0;
+        let total_question_interval = 0;
+        let question_ease_count = 0;
+        let question_interval_count = 0;
+
+        (questionProgress || []).forEach(p => {
+          // Count by mastery level
+          if (p.mastery_level === 'new') new_questions++;
+          else if (p.mastery_level === 'learning') learning_questions++;
+          else if (p.mastery_level === 'reviewing') reviewing_questions++;
+          else if (p.mastery_level === 'mastered') mastered_questions++;
+
+          // Calculate ease and interval averages
+          if (p.ease_factor) {
+            total_question_ease += p.ease_factor;
+            question_ease_count++;
+          }
+          if (p.interval_days) {
+            total_question_interval += p.interval_days;
+            question_interval_count++;
+          }
+
+          // Count due items (same logic as useDueQuestions)
+          let isDue = false;
+          let isDueSoon = false;
+
+          // Check if due now
+          if (p.next_review_date) {
+            const reviewDate = new Date(p.next_review_date);
+            if (reviewDate <= now) {
+              isDue = true;
+            } else if (reviewDate <= oneDayFromNow) {
+              isDueSoon = true;
+            }
+          }
+
+          // Or needs practice (more incorrect than correct)
+          if (p.incorrect_count > p.correct_count) {
+            isDue = true;
+          }
+
+          // Or not attempted in 3+ days
+          if (p.last_attempted) {
+            const lastAttempt = new Date(p.last_attempted);
+            const threeDaysAgo = new Date(now.getTime() - (3 * 24 * 60 * 60 * 1000));
+            const totalAttempts = (p.correct_count || 0) + (p.incorrect_count || 0);
+            if (lastAttempt < threeDaysAgo && totalAttempts > 0) {
+              isDue = true;
+            }
+          }
+
+          if (isDue) questions_due++;
+          if (isDueSoon) questions_due_soon++;
+        });
+
+        // Calculate flashcard stats
+        let flashcards_due = 0;
+        let flashcards_due_soon = 0;
+        let new_flashcards = 0;
+        let learning_flashcards = 0;
+        let reviewing_flashcards = 0;
+        let mastered_flashcards = 0;
+        let total_flashcard_ease = 0;
+        let total_flashcard_interval = 0;
+        let flashcard_ease_count = 0;
+        let flashcard_interval_count = 0;
+
+        (flashcardProgress || []).forEach(p => {
+          // Count by mastery level
+          if (p.mastery_level === 'new') new_flashcards++;
+          else if (p.mastery_level === 'learning') learning_flashcards++;
+          else if (p.mastery_level === 'reviewing') reviewing_flashcards++;
+          else if (p.mastery_level === 'mastered') mastered_flashcards++;
+
+          // Calculate ease and interval averages
+          if (p.ease_factor) {
+            total_flashcard_ease += p.ease_factor;
+            flashcard_ease_count++;
+          }
+          if (p.interval_days) {
+            total_flashcard_interval += p.interval_days;
+            flashcard_interval_count++;
+          }
+
+          // Count due items
+          if (p.next_review_date) {
+            const reviewDate = new Date(p.next_review_date);
+            if (reviewDate <= now) {
+              flashcards_due++;
+            } else if (reviewDate <= oneDayFromNow) {
+              flashcards_due_soon++;
+            }
+          }
+        });
+
+        const calculatedStats: SRSStats = {
+          questions_due,
+          questions_due_soon,
+          new_questions,
+          learning_questions,
+          reviewing_questions,
+          mastered_questions,
+          flashcards_due,
+          flashcards_due_soon,
+          new_flashcards,
+          learning_flashcards,
+          reviewing_flashcards,
+          mastered_flashcards,
+          avg_question_ease: question_ease_count > 0 ? total_question_ease / question_ease_count : 2.50,
+          avg_flashcard_ease: flashcard_ease_count > 0 ? total_flashcard_ease / flashcard_ease_count : 2.50,
+          avg_question_interval: question_interval_count > 0 ? total_question_interval / question_interval_count : 1,
+          avg_flashcard_interval: flashcard_interval_count > 0 ? total_flashcard_interval / flashcard_interval_count : 1,
+        };
+
+        console.log('[useSRSStats] Calculated stats:', calculatedStats);
+        setStats(calculatedStats);
       } catch (err: any) {
-        setError(err.message);
-        console.error('Error fetching SRS stats:', err);
+        const errorMessage = err?.message || 'Failed to calculate SRS stats';
+        setError(errorMessage);
+        console.error('[useSRSStats] Error:', err);
       } finally {
         setLoading(false);
       }
